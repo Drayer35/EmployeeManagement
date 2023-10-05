@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+    font-family: 'Open Sans', sans-serif;
+  
+
+}
+body{
+    background-color:WHITE;  
+}
+
+.parent-cont{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    height: 100vh;
+}
+::selection {
+    background-color: #FFE5D3;
+  
+}
+
+/* Section Panel */
+.column-option{
+    background-color:white ;
+    border-right: 1px #e4e4e7 solid ;
+}
+.content-title{
+    text-align: center;
+    margin: 2rem;
+}
+.content-title h1{
+    font-size: 2rem;
+    color: #F1721C;
+}
+
+.list-option{
+    display: flex;
+    width: 318px;
+    flex-direction: column;
+}
+.option{
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #F1721C;
+    display:block;
+    font-size: 1.5rem;
+    margin: 8px;
+}
+
+.background-option{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 12px 0px 12px 30px;
+    cursor: pointer;
+}
+.contenedor-imagen {
+    /* Estilos para el contenedor padre, puedes establecer un ancho máximo si es necesario */
+    max-width: 60px; /* Por ejemplo, establece un ancho máximo */
+    /* Alinea la imagen en el centro horizontalmente */
+}
+
+.contenedor-imagen img {
+    max-width: 100%; /* La imagen se ajustará al ancho del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+
+
+
+.background-option:hover{
+    background-color: #FFE5D3 ;
+    transition: 0.3s;
+    border-left: 10px #F1721C solid;
+}
+/* Section ControlContent */
+
+.column-content{
+    background-color:#F8FAFB;
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    width: 100%;
+} 
+
+.header-content{
+    background-color: white;    
+    margin:20px 0px;
+    height: 120px;
+    border-top: #e4e4e7  1px  solid;
+    border-bottom:#e4e4e7 1px solid;
+}
+
+.content-section{
+  padding: 10px 30px;
+    background-color: transparent;
+}

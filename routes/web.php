@@ -17,8 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/dashboard','Dashboard');
+
+// Route::view('/','/layouts/App')->name('app');
 
 Route::view('/register','Register')->name('register');
 
-Route::view('/login','Login');
+Route::view('/login','Login')->name('login');
+
+Route::view('/formEstudiantes','FormEstudiantes')->name('formEstudiantes');
+
+Route::view('/formDocentes','FormDocentes')->name('formDocentes');
+
+Route::view('/formAcademico','FormAcademico')->name('formAcademico');
