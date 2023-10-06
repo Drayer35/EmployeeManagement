@@ -24,8 +24,8 @@ Route::view('/register','Register')->name('register');
 
 Route::view('/login','Login')->name('login');
 
-Route::view('/formEstudiantes','FormEstudiantes')->name('formEstudiantes');
+Route::view('/formRecordEmployee','FormRecordEmployee')->name('formRecordEmployee');
 
 Route::view('/formEmployee','FormEmployee')->name('formEmployee');
 
-Route::view('/formAcademico','FormAcademico')->name('formAcademico');
+Route::view('/formAssists','FormAssists')->name('formAssists');

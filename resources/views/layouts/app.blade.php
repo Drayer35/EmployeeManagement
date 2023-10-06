@@ -34,7 +34,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/database.png') }}" >
                                 </div>
-                                <a href="{{route('formEstudiantes')}}">DataBase</a>
+                                <a href="{{route('formRecordEmployee')}}">DataBase</a>
                             </div>
                         </li>
                         <li class="option">
@@ -42,7 +42,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/list.png') }}" >
                                 </div>
-                                <a href="{{('login')}}">Assists</a>
+                                <a href="{{('formAssists')}}">Assists</a>
                             </div>     
                         </li> 
                         <li class="option">
