@@ -13,7 +13,9 @@
     <section class="parent-cont">
         <div class="column-option">
             <div class="content-title">
-                    <img src="" alt="">
+                    <div class="contenedor-logo">
+                        <img src="{{ asset('img/logo.png')}} ">
+                    </div>
                     <h1>P R O S E C O R</h1>
             </div>
             <div class="content-nav">
@@ -24,7 +26,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/employee.png') }}" >
                                 </div>
-                                <a href="{{route('formDocentes')}}">Employees</a>
+                                <a href="{{route('formEmployee')}}">Employees</a>
                             </div>
                         </li>
                         <li class="option">
@@ -38,11 +40,20 @@
                         <li class="option">
                             <div class="background-option">
                                 <div class="contenedor-imagen">
+                                    <img src="{{ asset('img/list.png') }}" >
+                                </div>
+                                <a href="{{('login')}}">Assists</a>
+                            </div>     
+                        </li> 
+                        <li class="option">
+                            <div class="background-option">
+                                <div class="contenedor-imagen">
                                     <img src="{{ asset('img/logout.png') }}" >
                                 </div>
                                 <a href="{{('login')}}">Log Out</a>
                             </div>     
-                        </li>                      
+                        </li>     
+                        
                     </ul>
                 </nav>
             </div>

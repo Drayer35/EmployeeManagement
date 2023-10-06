@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Login');
 });
 
 
@@ -26,6 +26,6 @@ Route::view('/login','Login')->name('login');
 
 Route::view('/formEstudiantes','FormEstudiantes')->name('formEstudiantes');
 
-Route::view('/formDocentes','FormDocentes')->name('formDocentes');
+Route::view('/formEmployee','FormEmployee')->name('formEmployee');
 
 Route::view('/formAcademico','FormAcademico')->name('formAcademico');

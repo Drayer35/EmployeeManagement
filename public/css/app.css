@@ -2,15 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
     font-family: 'Open Sans', sans-serif;
-  
-
 }
 body{
     background-color:WHITE;  
 }
-
 .parent-cont{
     display: grid;
     grid-template-columns: 0.2fr 1fr;
@@ -18,26 +14,45 @@ body{
 }
 ::selection {
     background-color: #FFE5D3;
-  
 }
 
 /* Section Panel */
 .column-option{
     background-color:white ;
+    width: 100%;
+    min-width:318px;
     border-right: 1px #e4e4e7 solid ;
 }
 .content-title{
-    text-align: center;
-    margin: 2rem;
+    display: flex;
+    align-content: center;
+    justify-content: left;
+    margin: 2rem 1rem;
 }
 .content-title h1{
-    font-size: 2rem;
-    color: #F1721C;
+    font-size: 1.8rem;
+    /* color: #F1721C; */
+    display: flex;
+    align-self: center;
+    color: #302F2F ;
+}
+
+.contenedor-logo {
+    user-select: none;
+    max-width: 60px; 
+    margin: 0rem 0.5rem;
+}
+.contenedor-logo img {
+    max-width: 100%; 
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+   
 }
 
 .list-option{
     display: flex;
-    width: 318px;
+    width: 100%;
     flex-direction: column;
 }
 .option{
@@ -47,7 +62,8 @@ body{
 }
 a{
     text-decoration: none;
-    color: #F1721C;
+    color: #302F2F ;
+    user-select: none;
     display:block;
     font-size: 1.5rem;
     margin: 8px;
@@ -55,6 +71,7 @@ a{
 
 .background-option{
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: left;
     padding: 12px 0px 12px 30px;
@@ -64,14 +81,15 @@ a{
     /* Estilos para el contenedor padre, puedes establecer un ancho máximo si es necesario */
     max-width: 60px; /* Por ejemplo, establece un ancho máximo */
     /* Alinea la imagen en el centro horizontalmente */
+    user-select: none;
+    pointer-events: none;
 }
 
 .contenedor-imagen img {
     max-width: 100%; /* La imagen se ajustará al ancho del contenedor padre */
     height: auto; /* Mantiene la proporción de la imagen */
+    user-select: none;
 }
-
-
 
 
 
@@ -83,10 +101,11 @@ a{
 /* Section ControlContent */
 
 .column-content{
-    background-color:#F8FAFB;
+    background-color:#F9F9F9;
+    height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-rows: 0.1fr 1fr;
-    width: 100%;
 } 
 
 .header-content{
@@ -98,6 +117,11 @@ a{
 }
 
 .content-section{
-  padding: 10px 30px;
-    background-color: transparent;
+    overflow: auto;
+    padding:15px 10px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+
 }

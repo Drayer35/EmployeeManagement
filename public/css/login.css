@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.background{
+    display: flex;
+    height: 100vh;
+    margin-top:0%;
+    margin-left:0;
+    /* background-image: url(../imagenes/wv12_generated.jpg); */
+    background-size:130% 100%;
+    background-repeat:no-repeat;
+    background-position: center center;
+    animation: slider 50s infinite alternate;
+    align-items: center;
+    text-align: center;
+    float: right;
+    width: 100%;
+    animation: slider 15s infinite alternate;
+}
+@keyframes slider {
+    from{
+        background-position: right center;
+    }
+    to{
+        background-position: left center;
+    }
+}
+/**Lado derecho**/
+.section-form{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+}
+.content-form{
+    width: 100%;
+    height:100%;
+    border-bottom: 2px solid grey;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+    position: relative;
+    animation-name: desplegar-formulario;
+    animation-duration: 1s;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+@keyframes desplegar-formulario {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+.title-login{
+    font-size: 2rem;
+    text-align: center;
+}
+.form{
+
+    height: 52vh;
+    width: 50vh;
+    font-size: 2.5rem;
+}
+
+.option{
+    width:100%;
+    height:55px;
+    margin-top: 20px;
+    text-align: center;
+}
+.btn-submit {
+    color: aliceblue;
+    border-radius: 3px;
+    background-color: #302F2F ;
+
+    margin-bottom: 12px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.btn-submit:hover {
+    cursor:pointer;
+    transition: 0s;
+    background-color: gray;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.inputs {
+    width: 100%; /* Divide el ancho en 2 columnas, con 5px de espacio entre ellas */
+    height: 55px;
+    margin-top: 25px;
+    box-sizing: border-box; /* Evita que el padding afecte el ancho total */
+}
+input {
+    border-color: aliceblue;
+    width: 100%;
+    height: 100%;
+    font-size:1.5rem;
+    /* font-size: 1.3rem; */
+
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid rgb(211, 211, 211);
+}
+input:focus {
+    border-bottom: 2px #F1721C solid;
+    transition: .9s;
+    outline: none;
+}
