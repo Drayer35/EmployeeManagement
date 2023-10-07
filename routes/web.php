@@ -18,11 +18,9 @@ Route::get('/', function () {
 });
 
 
-// Route::view('/','/layouts/App')->name('app');
-
-Route::view('/register','Register')->name('register');
-
 Route::view('/login','Login')->name('login');
+
+Route::view('/admin','FormAdmin')->name('formAdmin');
 
 Route::view('/formRecordEmployee','FormRecordEmployee')->name('formRecordEmployee');
 

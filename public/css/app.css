@@ -91,13 +91,21 @@ a{
     user-select: none;
 }
 
-
-
 .background-option:hover{
     background-color: #FFE5D3 ;
     transition: 0.3s;
-    border-left: 10px #F1721C solid;
+    border-left: 10px #FB5D4D solid;
 }
+
+.option .background-option img {
+    filter: grayscale(100%); /* Convertir la imagen a escala de grises */
+}
+  
+  /* Estilo cuando se pasa el cursor sobre .background-option */
+  .option .background-option:hover img {
+    filter: sepia(100%) hue-rotate(10deg) brightness(1.1) saturate(42.8); /* Cambiar el color de la imagen */
+  }
+
 /* Section ControlContent */
 
 .column-content{
@@ -123,5 +131,20 @@ a{
     height: 100%;
     width: 100%;
     justify-content: center;
+}
 
+
+@media (max-width: 768px) {
+    .column-option {
+        display: none; /* Oculta la columna en pantallas pequeñas */
+    }
+
+    .parent-cont {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    }
+
+    /* Ajusta el ancho del contenido principal para ocupar todo el ancho disponible */
+    .column-content {
+        grid-template-columns: 1fr;
+    }
 }

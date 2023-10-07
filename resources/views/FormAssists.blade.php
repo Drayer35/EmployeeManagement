@@ -3,5 +3,5 @@
 @section('title','Assists')
 
 @section('content-section')
-    <h1>Files Historial</h1>
+    <h1>Historial Assists</h1>
 @endsection

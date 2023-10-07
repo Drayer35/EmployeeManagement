@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="@yield('style-content')">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Righteous&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <section class="parent-cont">
@@ -24,7 +23,15 @@
                         <li class="option">  
                             <div class="background-option">
                                 <div class="contenedor-imagen">
-                                    <img src="{{ asset('img/employee.png') }}" >
+                                    <img src="{{ asset('img/admin1.png') }}" >
+                                </div>
+                                <a href="{{route('formAdmin')}}">Admin</a>
+                            </div>
+                        </li>
+                        <li class="option">  
+                            <div class="background-option">
+                                <div class="contenedor-imagen">
+                                    <img src="{{ asset('img/group1.png') }}" >
                                 </div>
                                 <a href="{{route('formEmployee')}}">Employees</a>
                             </div>
@@ -32,7 +39,7 @@
                         <li class="option">
                             <div class="background-option">
                                 <div class="contenedor-imagen">
-                                    <img src="{{ asset('img/database.png') }}" >
+                                    <img src="{{ asset('img/database1.png') }}" >
                                 </div>
                                 <a href="{{route('formRecordEmployee')}}">DataBase</a>
                             </div>
@@ -40,7 +47,7 @@
                         <li class="option">
                             <div class="background-option">
                                 <div class="contenedor-imagen">
-                                    <img src="{{ asset('img/list.png') }}" >
+                                    <img src="{{ asset('img/list1.png') }}" >
                                 </div>
                                 <a href="{{('formAssists')}}">Assists</a>
                             </div>     
@@ -48,7 +55,7 @@
                         <li class="option">
                             <div class="background-option">
                                 <div class="contenedor-imagen">
-                                    <img src="{{ asset('img/logout.png') }}" >
+                                    <img src="{{ asset('img/exit1.png') }}" >
                                 </div>
                                 <a href="{{('login')}}">Log Out</a>
                             </div>     

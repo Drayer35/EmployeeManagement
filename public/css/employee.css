@@ -1,15 +1,24 @@
-.form-employee {
+.content-form-user{
+    display: flex;
+    flex-direction: row; /* Establecer la dirección de fila predeterminada */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-employee{
     height: auto; /* Cambia la altura para ajustar automáticamente según el contenido */
-    width: 50vw;
+    width: 53vw;
+    user-select: none;
+    /* margin: 20px 20px 0px 20px; */
 }
 .title-form-employee{
     font-size: 2rem;
+    color: #2D2D2D;
 }
 
 .inputs {
     width: calc(50% - 5px); /* Divide el ancho en 2 columnas, con 5px de espacio entre ellas */
     height: 55px;
-    margin-top: 25px;
+    margin-bottom: 25px;
     margin-left: 2px;
     display: inline-block;
     box-sizing: border-box; /* Evita que el padding afecte el ancho total */
@@ -25,10 +34,11 @@ input {
     border-left: 0px;
     border-right: 0px;
     border-bottom: 2px solid rgb(211, 211, 211);
+    user-select: none;
 }
 
 input:focus {
-    border-bottom: 2px #F1721C solid;
+    border-bottom: 2px #FB5D4D solid;
     transition: .9s;
     outline: none;
 }
@@ -36,6 +46,7 @@ input:focus {
 .select {
     font-size: 1.5rem;
     cursor:pointer;
+    user-select: none;
 }
 .select:scope{
     cursor: pointer;
@@ -63,12 +74,76 @@ a {
 .info {
     margin-top: 25px;
     color: rgb(93, 91, 91);
+    align-self: center;
+    user-select: none;
     text-align: justify;
 }
 .btn-submit:hover {
     cursor:pointer;
-    transition: 0s;
-    background-color: gray;
+    transition: 0.4s;
+    background-color: #FB5D4D;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.content-section-photo {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: auto; /* Ajusta la altura para que sea igual al formulario */
+    border: 1px solid #ccc; /* Agrega un borde al contenedor de perfil */
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.section-photo {
+    text-align: center;
+    user-select: none;
+}
+.contenedor-perfil{
+    pointer-events: none;
+    border-radius: 800p; 
+
+}
+
+.contenedor-perfil img {
+    max-width: 50%; /* Hace que la imagen se ajuste al tamaño del contenedor sin distorsionarla */
+    height: auto;
+    pointer-events: none;
+}
+
+.btn-photo {
+    color: aliceblue;
+    border-radius: 3px;
+    background-color: #302F2F ;
+    margin: 20px;
+    align-items: center;
+    margin-top: 25px;
+    border: none;
+    font-size: 1.5rem;
+    
+
+}
+.btn-photo:hover {
+    cursor:pointer;
+    transition: 0.4s;
+    background-color: #FB5D4D;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .content-form-user {
+        flex-direction: row; /* Cambiar a dirección de columna en pantallas pequeñas */
+    }
+
+    .content-section-photo {
+        flex-basis: 100%; /* La sección de fotos ocupa todo el ancho en pantallas pequeñas */
+    }
+
+    .form-employee {
+        flex-basis: 100%; /* El formulario ocupa todo el ancho en pantallas pequeñas */
+    }
 }

@@ -3,9 +3,17 @@
 @section('style-content',asset('css/employee.css'))
 @section('content-section')
    
-    <div class="content-form-employee">
-        <h1 class="title-form-employee">Employee Information</h1>
+    <div class="content-form-user">
+        <div class="content-section-photo">
+            <div class="section-photo">
+                    <div class="contenedor-perfil">
+                        <img src="{{ asset('img/rica.jpg')}} ">
+                    </div>
+                    <button class="btn-photo">Add Photo</button>
+            </div>
+        </div>
         <form class="form-employee" method="POST" id="form-employee">
+            {{-- <h1 class="title-form-employee">Employee Information</h1> --}}
             <div class="inputs"><input type="text" id="dateAdmision" name='dateAdmision' placeholder="Date Admission" autofocus required  autocomplete="off"></div>
             <div class="inputs"><input type="text" id="nombre" name='nombre' placeholder="Name" required  autocomplete="off"></div>
             <div class="inputs"><input type="text" id="lastName" name='lastName' placeholder="Last Name" required autocomplete="off"></div>
@@ -42,7 +50,8 @@
                 <div class="info">All identity information entered will be placed in a database.
                 </div>
                 <input class="btn-submit" type="submit" value="REGISTER" name="register-employee" id="register-btn">
-            </div>                        
+            </div>                       
         </form>
     </div>
+    
 @endsection

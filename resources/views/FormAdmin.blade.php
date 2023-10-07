@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title','Record Employee')
+@section('title','Admin')
 
 
 
 @section('content-section')
-    <h1>Record Employee</h1>
+    <h1>Admin - Section</h1>
 @endsection
