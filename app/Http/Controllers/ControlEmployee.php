@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class ControlEmployee extends Controller
 {
+    public function admin(){
+        return view('FormAdmin');
+    }
+
     public function recordEmployee(){
         return view('FormRecordEmployee');
     }

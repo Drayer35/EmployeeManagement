@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ControlEmployee;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\ControlUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Login');
+
+
+Route::controller(ControlUser::class)->group(function(){
+    Route::get('/login','Login')->name('login');
 });
 
-
-Route::view('/login','Login')->name('login');
-
-Route::view('/admin','FormAdmin')->name('formAdmin');
 
 
 
@@ -29,12 +29,11 @@ Route::view('/admin','FormAdmin')->name('formAdmin');
 
 Route::controller(ControlEmployee::class)->group(function(){
 
+    Route::get('/admin','admin')->name('formAdmin');
+
     Route::get('/formEmployee','register')->name('formEmployee');
 
     Route::get('/formRecord','recordEmployee')->name('formRecord');
 
-    Route::get('/formAssists','assistEmployee')->name('formAssists');;;
-
- 
-    
+    Route::get('/formAssists','assistEmployee')->name('formAssists');
 });
