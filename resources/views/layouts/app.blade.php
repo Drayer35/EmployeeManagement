@@ -41,7 +41,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/database1.png') }}" >
                                 </div>
-                                <a href="{{route('formRecordEmployee')}}">DataBase</a>
+                                <a href="{{route('formRecord')}}">DataBase</a>
                             </div>
                         </li>
                         <li class="option">
