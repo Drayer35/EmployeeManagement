@@ -27,7 +27,7 @@ body{
     display: flex;
     align-content: center;
     justify-content: left;
-    margin: 2rem 1rem;
+    margin: 2.5rem 1rem;
 }
 .content-title h1{
     font-size: 1.8rem;
@@ -77,6 +77,7 @@ a{
     padding: 12px 0px 12px 30px;
     cursor: pointer;
 }
+
 .contenedor-imagen {
     /* Estilos para el contenedor padre, puedes establecer un ancho máximo si es necesario */
     max-width: 60px; /* Por ejemplo, establece un ancho máximo */
