@@ -36,4 +36,8 @@ Route::controller(ControlEmployee::class)->group(function(){
     Route::get('/formRecord','recordEmployee')->name('formRecord');
 
     Route::get('/formAssists','assistEmployee')->name('formAssists');
+
+    Route::post('/formEmployee','store')->name('formemployee.store');
+
 });
+

@@ -28,7 +28,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/admin1.png') }}" >
                                 </div>
-                                <a href="{{route('formAdmin')}}">{{__('Admin')}}</a>
+                                <a href="{{route('formAdmin')}}" id="go">{{__('Admin')}}</a>
                             </div>
                         </li>
                         <li class="option">  

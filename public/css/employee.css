@@ -26,7 +26,7 @@
 input {
     width: 100%;
     height: 100%;
-    font-size:1.5rem;
+    font-size:1.2rem;
     border-radius: 0px;
     border-top: 0px;
     border-left: 0px;
@@ -42,7 +42,7 @@ input:focus {
 }
 
 .select {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor:pointer;
     user-select: none;
 }
@@ -140,22 +140,21 @@ a {
     color: white;
     background-color: #302F2F ;
     padding: 0px 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .lbl-photo:hover{
     background-color: #FB5D4D;
     color: white;
+    
 }
 
 @media (max-width: 768px) {
     .content-form-user {
         flex-direction: row; /* Cambiar a dirección de columna en pantallas pequeñas */
     }
-
     .content-section-photo {
         flex-basis: 100%; /* La sección de fotos ocupa todo el ancho en pantallas pequeñas */
     }
-
     .form-employee {
         flex-basis: 100%; /* El formulario ocupa todo el ancho en pantallas pequeñas */
     }

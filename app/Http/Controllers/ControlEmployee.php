@@ -16,6 +16,9 @@ class ControlEmployee extends Controller
     public function assistEmployee(){
         return view('FormAssists');
     }
+    public function store(Request $request){
+        return $request->all();
+    }
 
     public function register(){
         return view('FormEmployee');
