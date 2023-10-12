@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/',function(){
+    return view('Login');
+});
 
 Route::controller(ControlUser::class)->group(function(){
     Route::get('/login','Login')->name('login');
