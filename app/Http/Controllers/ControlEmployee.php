@@ -1,9 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\CivilStatus;
+use App\Models\Department;
 use App\Models\Employee;
+use App\Models\Gender;
 use Illuminate\Http\Request;
 use Psy\Readline\Hoa\Console;
+use Illuminate\Support\Facades\Storage;
+
+use function PHPUnit\Framework\isEmpty;
 
 class ControlEmployee extends Controller
 {
@@ -17,15 +24,32 @@ class ControlEmployee extends Controller
     public function assistEmployee(){
         return view('FormAssists');
     }
+
+    public function register(){
+        $genders= Gender::all();
+        $departments= Department::all();
+        $statuses= CivilStatus::all();
+        return view('FormEmployee',compact('genders','statuses'));
+    }
+
     public function store(Request $request){
         $request->validate([
-            'add-photo'=>'required|image'
+            'add-photo'=>'image|max:2068',
+            'name'=>'required',
+            'lastName'=>'required',
+            'dni'=>'required',
+            'phone'=>'required',
+            'birthdate'=>'required',
+            'genderList'=>'required',
+            'statusList'=>'required',
+            'email'=>'required',
+            'departmentList'=>'required',
+            'provinceList'=>'required',
+            'profession'=>'required',
+            'dateAdmission'=>'required'            
         ]);
         
         try{
-            // if(){
-
-            // }
             $employee = new Employee();
             $employee->date_admision= $request->dateAdmission;
             $employee->name =$request->name;
@@ -36,25 +60,22 @@ class ControlEmployee extends Controller
             $employee->profession=$request->profession;
             $employee->email = $request->email;
             $employee->status_id =$request->statusList;
-    
             $employee->gender_id=$request->genderList;
             $employee->department_id=$request->departmentList;
             $employee->province_id=$request->provinceList;
-    
+            $img= $request->file('add-photo')->store('public/features');
+            $url=   Storage::url($img);
+            $employee->photo =$url;
             $employee->save();
-            return $request->all();
+          
         }
         catch(\Exception $e){
             error_log($e);
             echo $e;
+            return back()->withErrors(['error' => 'Hubo un problema al procesar la solicitud.'])->withInput();
         }
 
        
     }
 
-    public function register(){
-        return view('FormEmployee');
-    }
-
-    
 }

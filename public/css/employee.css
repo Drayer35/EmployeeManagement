@@ -17,7 +17,7 @@
 .inputs {
     width: calc(50% - 5px); /* Divide el ancho en 2 columnas, con 5px de espacio entre ellas */
     height: 55px;
-    margin-bottom: 25px;
+    margin-bottom: 35px; vertical-align: top; 
     margin-left: 2px;
     display: inline-block;
     box-sizing: border-box; /* Evita que el padding afecte el ancho total */
@@ -148,7 +148,10 @@ a {
 .lbl-photo:hover{
     background-color: #FB5D4D;
     color: white;
-    
+}
+.alert{
+    color: red;
+    vertical-align: top;
 }
 
 @media (max-width: 768px) {

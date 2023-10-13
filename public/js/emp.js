@@ -14,3 +14,11 @@ const img=document.getElementById('img');
         img.src=defaultphoto;
     }
 }); 
+
+
+function listProvinces(departmentSelect){
+    let depId=departmentSelect.value;
+
+    fetch('')
+    alert(departmentSelect.value);
+}
