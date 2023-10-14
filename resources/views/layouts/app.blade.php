@@ -6,9 +6,9 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <script src="{{asset('js/app.js')}}"></script>
-    
     <link rel="stylesheet" href="@yield('style-content')">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Righteous&display=swap" rel="stylesheet">
+    @livewireStyles
 </head>
 <body>
   
@@ -73,7 +73,7 @@
                 
             </div>
             <div class="content-section">
-                @yield('content-section')
+                @yield('content-section')      
             </div>
         </div>
     </section> 

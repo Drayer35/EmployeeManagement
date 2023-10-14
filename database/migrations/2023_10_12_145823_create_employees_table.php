@@ -27,12 +27,11 @@ return new class extends Migration
             $table->unsignedBigInteger('gender_id');
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('province_id');
-            $table->string('photo')->nullable();
+            $table->binary('photo')->nullable();
             $table->timestamps();
             $table->foreign('status_id')
                 ->references('id')
                 ->on('civil_status');
-            
             $table->foreign('gender_id')
                 ->references('id')
                 ->on('genders');
@@ -45,6 +44,9 @@ return new class extends Migration
                 ->references('id')
                 ->on('provinces');
             });
+  
+            DB::statement('ALTER TABLE employees MODIFY photo LONGBLOB');
+        
     }
 
     /**

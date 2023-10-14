@@ -4,7 +4,7 @@
 @section('section-logic',asset('js/emp.js'))
 @section('content-section')
 
-    @livewireScripts()
+  @livewireScripts
     <div class="content-form-user">
         <div class="content-section-photo">
             <div class="section-photo">
@@ -14,7 +14,10 @@
                     @error('add-photo')
                         <span class="alert">{{$message}}</span>
                     @enderror <br>
-                    <label for="add-photo" class="lbl-photo">{{__('Select Photo')}}</label>  
+                    {{-- <label for="add-photo"  id="lbl-photo" class="lbl-photo" >{{__('Select Photo')}}</label>   --}}
+                    <button  class="btn-del-photo" id="btn-photo">
+                        {{__('Agregar Foto')}}
+                    </button>
             </div>
         </div>
         <form class="form-employee"  id="form-employee" action="{{route('formemployee.store')}}" method="POST"method="POST" enctype="multipart/form-data">
@@ -45,25 +48,37 @@
             </div>
             
             <div class="inputs">
-                <input type="text" id="birthdate" name='birthdate' placeholder={{__('Birthdate')}}  value="{{old('birthdate')}}" autocomplete="off" min="1950-01-01" max="2025-12-31" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <input type="text" id="birthdate" name='birthdate' placeholder={{__('Birthdate')}}  value="{{old('birthdate')}}" autocomplete="off" min="1950-01-01"  onfocus="(this.type='date')" onblur="(this.type='text')">
                 @error('birthdate')
                     <small class="alert">{{$message}}</small>
                 @enderror
             </div>
-            
-            <select id="gender-list" name="genderList" class="inputs select" required>
-                <option value="" disabled selected>{{__('Gender')}} </option>
-                @foreach ($genders as $gender )
-                    <option value="{{$gender['id']}}">{{$gender['gender']}}</option>
-                @endforeach             
-            </select>
-            
-            <select id="status-list" name="statusList" class="inputs select" required>
-                <option value="" disabled selected>{{__('Civil Status')}}</option>
-                @foreach ($statuses as $status )
-                    <option value="{{$status['id']}}">{{$status['name']}}</option>
-                @endforeach  
-            </select>
+
+            <div class="inputs">
+                <select id="gender-list" name="genderList" class="select" >
+                    <option value="" disabled selected>{{__('Gender')}} </option>
+                    @foreach ($genders as $gender )
+                        <option value="{{$gender['id']}}">{{$gender['gender']}}</option>
+                    @endforeach 
+                </select>
+                @error('genderList')
+                    <small class="alert">{{$message}}</small>
+                @enderror
+            </div>
+         
+          
+            <div class="inputs">
+                <select id="status-list" name="statusList" class="select" >
+                    <option value="" disabled selected>{{__('Civil Status')}}</option>
+                    @foreach ($statuses as $status )
+                        <option value="{{$status['id']}}">{{$status['name']}}</option>
+                    @endforeach  
+                </select>
+                @error('statusList')
+                    <small class="alert">{{$message}}</small>
+                @enderror
+            </div>
+
             <div class="inputs">
                 <input type="text" id="phone" name='phone' maxlength="9"  placeholder={{__('Phone')}} value="{{old('phone')}}"  autocomplete="off">
                 @error('phone')
@@ -78,13 +93,7 @@
                 @enderror
             </div>
             
-            {{-- <select id="department-list" name="departmentList" class="inputs select" required onchange="listProvinces(this)">
-                <option value="" disabled selected>{{__('Department')}}</option>
-                @foreach ($departments as $department ) 
-                    <option value="{{$department['id']}}">{{$department['department']}}</option>
-                @endforeach    
-            </select> --}}
-            <livewire:filter-provinces>
+            <livewire:selected-inputs>
             
             <div class="inputs">
                 <input type="text"id="profession" name='profession' placeholder={{__('Profession')}} value="{{old('profession')}}" autocomplete="off">

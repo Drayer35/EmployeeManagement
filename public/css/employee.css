@@ -14,6 +14,8 @@
     color: #2D2D2D;
 }
 
+
+
 .inputs {
     width: calc(50% - 5px); /* Divide el ancho en 2 columnas, con 5px de espacio entre ellas */
     height: 55px;
@@ -41,11 +43,12 @@ input:focus {
     outline: none;
 }
 
-.select {
+.select {height: 55px;
     font-size: 1.2rem;
     cursor:pointer;
     color: #757575;
     user-select: none;
+width: 100%;
 }
 .select:focus{
     cursor: pointer;
@@ -116,6 +119,8 @@ a {
     max-height: 100%; /* Asegura que la altura de la imagen también se ajuste al contenedor */
     object-fit: cover; /* Hace que la imagen se ajuste dentro del contenedor manteniendo su proporción y recortando si es necesario */
     pointer-events: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .btn-photo {
@@ -138,17 +143,38 @@ a {
     display: none;
 }
 .lbl-photo{
+    white-space: nowrap;
     border-radius: 8px;
     color: white;
     background-color: #302F2F ;
     padding: 0px 20px;
     transition: 0.4s;
     font-size: 1.2rem;
+    cursor: pointer;
 }
-.lbl-photo:hover{
-    background-color: #FB5D4D;
+
+.lbl-photo:active{
+    transition: 0.0s;
+    background-color: #302F2F;
+}
+.btn-del-photo{
+    background-color: #302F2F;
     color: white;
+    font-size: 1.2rem;
+    padding: 0px 15px;
+    transition: 0.4s;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
 }
+.btn-del-photo:hover{
+    background-color: #F33737;
+}
+.btn-del-photo:active{
+    transition: 0.0s;
+    background-color: #9C1717 ;
+}
+
 .alert{
     color: red;
     vertical-align: top;
