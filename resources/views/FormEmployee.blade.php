@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title','Employee')
+@section('title')
+{{__('Register Employee')}}
+@endsection
 @section('css',asset('css/employee.css'))
 @section('js',asset('js/emp.js'))
 @section('content-section')
@@ -14,7 +16,6 @@
                     @error('add-photo')
                         <span class="alert">{{$message}}</span>
                     @enderror <br>
-                    {{-- <label for="add-photo"  id="lbl-photo" class="lbl-photo" >{{__('Select Photo')}}</label>   --}}
                     <button  class="btn-del-photo" id="btn-photo">
                         {{__('Agregar Foto')}}
                     </button>
@@ -25,7 +26,7 @@
            
             <input type="file"  class="photo" value="Add Photo" name="add-photo" id="add-photo" accept="image/*" value="{{old('add-photo')}}"> 
             <div class="inputs">
-                <input type="text" id="name" name='name' value="{{ old('name') }}"  placeholder={{__('Name')}}  autocomplete="off">
+                <input  type="text" id="name" name='name' value="{{ old('name') }}"  placeholder={{__('Name')}}  autocomplete="off" oninput="validateWord(this)">
                 @error('name')
                 <br>
                     <small class="alert">{{$message}}</small>
@@ -34,14 +35,14 @@
             </div> 
             
             <div class="inputs">
-                <input type="text" id="lastName" name='lastName' value="{{old('lastName')}}" placeholder={{__('Last Name')}}  autocomplete="off">
+                <input type="text" id="lastName" name='lastName' value="{{old('lastName')}}" placeholder={{__('Last Name')}}  autocomplete="off" oninput="validateWord(this)">
                 @error('lastName')
                     <small class="alert">{{$message}}</small>
                 @enderror
             </div>
            
             <div class="inputs">
-                <input type="text" id="dni" name='dni' placeholder="DNI" autocomplete="off" value="{{old('dni')}}" maxlength="8">
+                <input type="text" id="dni" name='dni' placeholder="DNI" autocomplete="off" value="{{old('dni')}}" maxlength="8" oninput="validateNumber(this)">
                 @error('dni')
                     <small class="alert">{{$message}}</small>
                 @enderror
@@ -80,7 +81,7 @@
             </div>
 
             <div class="inputs">
-                <input type="text" id="phone" name='phone' maxlength="9"  placeholder={{__('Phone')}} value="{{old('phone')}}"  autocomplete="off">
+                <input type="text" id="phone" name='phone' maxlength="9"  placeholder={{__('Phone')}} value="{{old('phone')}}"  autocomplete="off" oninput="validateNumber(this)">
                 @error('phone')
                     <small class="alert">{{$message}}</small> 
                 @enderror
@@ -92,11 +93,12 @@
                     <small class="alert">{{$message}}</small>
                 @enderror
             </div>
+
             
             <livewire:selected-inputs>
             
             <div class="inputs">
-                <input type="text"id="profession" name='profession' placeholder={{__('Profession')}} value="{{old('profession')}}" autocomplete="off">
+                <input type="text"id="profession" name='profession' class="display-none" placeholder={{__('Profession')}} value="{{old('profession')}}" autocomplete="off" oninput="validateWord(this)">
                 @error('profession')
                     <small class="alert">{{$message}}</small>
                 @enderror
@@ -112,7 +114,7 @@
             <div class="descript-info">
                 <div class="info">{{__('All identity information entered will be placed in a database.')}}
                 </div>
-                <input class="btn-submit" type="submit" value={{__('Register')}}  name="register-employee" id="register-btn">
+                <input class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded " type="submit" value={{__('Register')}}  name="register-employee" id="register-btn">
             </div>                       
         </form>
        

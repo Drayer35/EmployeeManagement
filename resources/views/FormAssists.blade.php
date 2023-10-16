@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title','Assists')
+@section('title')
+{{__('Assists')}}
+@endsection
 
 @section('content-section')
     <h1>Historial Assists</h1>

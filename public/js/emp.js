@@ -2,6 +2,7 @@ const defaultphoto = "img/photo.png";
 const file = document.getElementById('add-photo');
 const img = document.getElementById('img');
 const btnPhoto = document.getElementById('btn-photo');
+const input_name = document.getElementById('name_input');
 
 function verifyStateButton() {
     console.log(btnPhoto.innerHTML);
@@ -36,3 +37,11 @@ file.addEventListener('change', e => {
         btnPhoto.innerHTML = 'Agregar Foto';
     }
 });
+
+
+function validateWord(input) {
+    input.value = input.value.replace(/[^a-zA-Z]/g, '');
+  }
+function validateNumber(input) {
+    input.value = input.value.replace(/\D/g, '');
+}

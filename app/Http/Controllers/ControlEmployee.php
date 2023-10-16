@@ -15,7 +15,6 @@ use function PHPUnit\Framework\isNull;
 
 class ControlEmployee extends Controller
 {
-    
     public function admin(){
         return view('FormAdmin');
     }
@@ -78,9 +77,8 @@ class ControlEmployee extends Controller
         }
         catch(\Exception $e){
             echo $e;
-        }
-
-       
+        } 
     }
 
+  
 }
