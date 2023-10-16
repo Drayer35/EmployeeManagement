@@ -17,6 +17,7 @@ btnPhoto.addEventListener('click', (e) => {
         file.click();
     } else {
         img.src = defaultphoto;
+        file.value =null
         btnPhoto.innerHTML = 'Agregar Foto';
     }
 });

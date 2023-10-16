@@ -24,6 +24,8 @@ class ControlEmployee extends Controller
         $employees = Employee::all();
         return view('FormRecordEmployee',compact('employees'));
     }
+
+    
     public function assistEmployee(){
         return view('FormAssists');
     }
@@ -66,9 +68,6 @@ class ControlEmployee extends Controller
             $employee->gender_id=$request->genderList;
             $employee->department_id=$request->departmentList;
             $employee->province_id=$request->provinceList;
-            // $img= $request->file('add-photo');
-            // $img2=$request->addslashes(file_get_contents($_FILES['add-photo']['tmp_name']));
-            
             if ($request->hasFile('add-photo')) {
                 $img = $request->file('add-photo');
                 $imgContents = file_get_contents($img->getPathname());

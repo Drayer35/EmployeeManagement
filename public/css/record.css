@@ -1,0 +1,21 @@
+.btn-table{
+    border: none;
+    outline: none;
+    user-select: none;
+    border-radius: 8px;
+    padding:6px 12px;
+    color: white;
+
+}
+
+
+.btn-table-edit{
+    background-color: #0D65ED ;
+}
+.btn-table-edit:active{
+    border: none;   outline: none;
+}
+
+.btn-table-delete{
+    background-color: #DE1010 ;
+}

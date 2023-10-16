@@ -8,9 +8,10 @@
         "php": "^8.2.0",
         "doctrine/dbal": "^3.7",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^10.0",
+        "laravel/framework": "^9.7",
         "laravel/sanctum": "^3.0.0",
         "laravel/tinker": "^2.7",
+        "laravel/ui": "^4.2",
         "livewire/livewire": "^2.12"
     },
     "require-dev": {
@@ -19,9 +20,9 @@
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^7.0",
-        "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
+        "nunomaduro/collision": "^6.4.0",
+        "phpunit/phpunit": "^9.6.13",
+        "spatie/laravel-ignition": "^1.6.4"
     },
     "autoload": {
         "psr-4": {

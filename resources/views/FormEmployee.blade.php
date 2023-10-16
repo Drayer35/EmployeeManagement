@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Employee')
-@section('style-content',asset('css/employee.css'))
-@section('section-logic',asset('js/emp.js'))
+@section('css',asset('css/employee.css'))
+@section('js',asset('js/emp.js'))
 @section('content-section')
 
   @livewireScripts

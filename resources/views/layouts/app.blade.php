@@ -1,3 +1,4 @@
+{{-- @import '~@fortawesome/fontawesome-free/css/all.min.css'; --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,13 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <script src="{{asset('js/app.js')}}"></script>
-    <link rel="stylesheet" href="@yield('style-content')">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="@yield('css')">
+    
     @livewireStyles
 </head>
 <body>
-  
     <section class="parent-cont">
         <div class="column-option">
             <div class="content-title">
@@ -73,11 +75,12 @@
                 
             </div>
             <div class="content-section">
-                @yield('content-section')      
+                @yield('content-section')   
+                <script src="@yield('js')"></script>   
             </div>
         </div>
     </section> 
-    <script src="@yield('section-logic')"></script>
+   
 </body>
 </html>
 
