@@ -58,6 +58,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+    @livewireScripts()
     <section class="parent-cont">
         <div class="column-option">
             <div class="content-title">
@@ -120,6 +121,7 @@
             <div class="content-section">
                 <link rel="stylesheet" href="@yield('css')">
                 @yield('content-section')   
+              
                 <script src="@yield('js')"></script>   
             </div>
         </div>

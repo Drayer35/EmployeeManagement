@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('last_name');
             $table->date('birthdate');
-            $table->string('dni',8)->unique();
+            $table->string('dni',8); //poner uniuqe
             $table->string('email')->unique();
-            $table->string('phone',9)->unique();
+            $table->string('phone',9);  //poner unique
             $table->string('profession',180);
             $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('gender_id');

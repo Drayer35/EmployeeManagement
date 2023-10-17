@@ -6,7 +6,7 @@
 @section('js',asset('js/emp.js'))
 @section('content-section')
 
-  @livewireScripts
+
     <div class="content-form-user">
         <div class="content-section-photo">
             <div class="section-photo">

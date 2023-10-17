@@ -538,140 +538,475 @@ class ProvincesSeeder extends Seeder
         $prov100->save();
 
 
+        $prov101 = new Province();
+        $prov101 ->province = "Chanchamayo";
+        $prov101 ->department_id= 12;
+        $prov101 ->save();
+        $prov101 = new Province();
+        $prov101 ->province = "Chupaca";
+        $prov101 ->department_id= 12;
+        $prov101 ->save();
+
+        $prov102 = new Province();
+        $prov102 ->province = "Concepcion";
+        $prov102 ->department_id= 12;
+        $prov102 ->save();
+
+        $prov103 = new Province();
+        $prov103 ->province = "Huancayo";
+        $prov103 ->department_id= 12;
+        $prov103 ->save();
+
+        $prov104 = new Province();
+        $prov104 ->province = "Jauja";
+        $prov104 ->department_id= 12;
+        $prov104 ->save();
+
+        $prov105 = new Province();
+        $prov105 ->province = "Junin";
+        $prov105 ->department_id= 12;
+        $prov105 ->save();
+
+        $prov106 = new Province();
+        $prov106 ->province = "Satipo";
+        $prov106 ->department_id= 12;
+        $prov106 ->save();
+
+        $prov107 = new Province();
+        $prov107 ->province = "Tarma";
+        $prov107 ->department_id= 12;
+        $prov107 ->save();
+
+        $prov108 = new Province();
+        $prov108 ->province = "Yauli";
+        $prov108 ->department_id= 12;
+        $prov108 ->save();
 
 
-        // // Departamento 11 (Ica)
-        // Province::create(['province' => 'Ica', 'department_id' => 11]),
-        // Province::create(['province' => 'Chincha', 'department_id' => 11]),
-        // Province::create(['province' => 'Nazca', 'department_id' => 11]),
-        // Province::create(['province' => 'Palpa', 'department_id' => 11]),
-        // Province::create(['province' => 'Pisco', 'department_id' => 11]),
+        $prov109 = new Province();
+        $prov109 ->province = "Trujillo";
+        $prov109 ->department_id= 13;
+        $prov109 ->save();
 
-        // // Departamento 12 (Junin)
-        // Province::create(['province' => 'Chanchamayo', 'department_id' => 12]),
-        // Province::create(['province' => 'Chupaca', 'department_id' => 12]),
-        // Province::create(['province' => 'Concepcion', 'department_id' => 12]),
-        // Province::create(['province' => 'Huancayo', 'department_id' => 12]),
-        // Province::create(['province' => 'Jauja', 'department_id' => 12]),
-        // Province::create(['province' => 'Junin', 'department_id' => 12]),
-        // Province::create(['province' => 'Satipo', 'department_id' => 12]),
-        // Province::create(['province' => 'Tarma', 'department_id' => 12]),
-        // Province::create(['province' => 'Yauli', 'department_id' => 12]),
+        $prov110 = new Province();
+        $prov110 ->province = "Ascope";
+        $prov110 ->department_id= 13;
+        $prov110 ->save();
 
-        // // Departamento 13 (La Libertad)
-        // Province::create(['province' => 'Trujillo', 'department_id' => 13]),
-        // Province::create(['province' => 'Ascope', 'department_id' => 13]),
-        // Province::create(['province' => 'Bolivar', 'department_id' => 13]),
-        // Province::create(['province' => 'Chepen', 'department_id' => 13]),
-        // Province::create(['province' => 'Julcan', 'department_id' => 13]),
-        // Province::create(['province' => 'Otuzco', 'department_id' => 13]),
-        // Province::create(['province' => 'Gran Chimu', 'department_id' => 13]),
-        // Province::create(['province' => 'Pacasmayo', 'department_id' => 13]),
-        // Province::create(['province' => 'Pataz', 'department_id' => 13]),
-        // Province::create(['province' => 'Sanchez Carrion', 'department_id' => 13]),
-        // Province::create(['province' => 'Santiago de Chuco', 'department_id' => 13]),
-        // Province::create(['province' => 'Viru', 'department_id' => 13]),
+        $prov111 = new Province();
+        $prov111 ->province = "Bolivar";
+        $prov111 ->department_id= 13;
+        $prov111 ->save();
 
-        // // Departamento 14 (Lambayeque)
-        // Province::create(['province' => 'Chiclayo', 'department_id' => 14]),
-        // Province::create(['province' => 'Ferreñafe', 'department_id' => 14]),
-        // Province::create(['province' => 'Lambayeque', 'department_id' => 14]),
+        $prov112 = new Province();
+        $prov112 ->province = "Chepen";
+        $prov112 ->department_id= 13;
+        $prov112 ->save();
 
-        // // Departamento 15 (Lima)
-        // Province::create(['province' => 'Barranca', 'department_id' => 15]),
-        // Province::create(['province' => 'Cajatambo', 'department_id' => 15]),
-        // Province::create(['province' => 'Canta', 'department_id' => 15]),
-        // Province::create(['province' => 'Cañete', 'department_id' => 15]),
-        // Province::create(['province' => 'Huaral', 'department_id' => 15]),
-        // Province::create(['province' => 'Huarochiri', 'department_id' => 15]),
-        // Province::create(['province' => 'Huaraura', 'department_id' => 15]),
-        // Province::create(['province' => 'Lima', 'department_id' => 15]),
-        // Province::create(['province' => 'Oyon', 'department_id' => 15]),
-        // Province::create(['province' => 'Yautos', 'department_id' => 15]),
+        $prov113 = new Province();
+        $prov113 ->province = "Julcan";
+        $prov113 ->department_id= 13;
+        $prov113 ->save();
 
 
-        // // Departamento 16 (Loreto)
-        // Province::create(['province' => 'Maynas', 'department_id' => 16]),
-        // Province::create(['province' => 'Putumayo', 'department_id' => 16]),
-        // Province::create(['province' => 'Alto Amazonas', 'department_id' => 16]),
-        // Province::create(['province' => 'Loreto', 'department_id' => 16]),
-        // Province::create(['province' => 'Mariscal Ramon Castilla', 'department_id' => 16]),
-        // Province::create(['province' => 'Requena', 'department_id' => 16]),
-        // Province::create(['province' => 'Ucayali', 'department_id' => 16]),
-        // Province::create(['province' => 'Datem del Marañon', 'department_id' => 16]),
+        $prov114 = new Province();
+        $prov114 ->province = "Otuzco";
+        $prov114 ->department_id= 13;
+        $prov114 ->save();
 
-        // // Departamento 17 (Madre de Dios)
-        // Province::create(['province' => 'Tambopata', 'department_id' => 17]),
-        // Province::create(['province' => 'Manu', 'department_id' => 17]),
-        // Province::create(['province' => 'Tahuamanu', 'department_id' => 17]),
 
-        // // Departamento 18 (Moquegua)
-        // Province::create(['province' => 'Mariscal Nieto', 'department_id' => 18]),
-        // Province::create(['province' => 'General Sanchez', 'department_id' => 18]),
-        // Province::create(['province' => 'ILO', 'department_id' => 18]),
+        $prov115 = new Province();
+        $prov115 ->province = "Gran Chimu";
+        $prov115 ->department_id= 13;
+        $prov115 ->save();
 
-        // // Departamento 19 (Pasco)
-        // Province::create(['province' => 'Pasco', 'department_id' => 19]),
-        // Province::create(['province' => 'Oxapampa', 'department_id' => 19]),
-        // Province::create(['province' => 'Daniel A. Carrion', 'department_id' => 19]),
+        $prov116 = new Province();
+        $prov116 ->province = "Pacasmayo";
+        $prov116 ->department_id= 13;
+        $prov116 ->save();
 
-        // // Departamento 20 (Piura)
-        // Province::create(['province' => 'Ayabaca', 'department_id' => 20]),
-        // Province::create(['province' => 'Huancabamba', 'department_id' => 20]),
-        // Province::create(['province' => 'Morropon', 'department_id' => 20]),
-        // Province::create(['province' => 'Piura', 'department_id' => 20]),
-        // Province::create(['province' => 'Sechura', 'department_id' => 20]),
-        // Province::create(['province' => 'Sullana', 'department_id' => 20]),
-        // Province::create(['province' => 'Paita', 'department_id' => 20]),
-        // Province::create(['province' => 'Talara', 'department_id' => 20]),
+        $prov117 = new Province();
+        $prov117 ->province = "Pataz";
+        $prov117 ->department_id= 13;
+        $prov117 ->save();
 
-        // // Departamento 21 (Puno)
-        // Province::create(['province' => 'San Roman', 'department_id' => 21]),
-        // Province::create(['province' => 'Puno', 'department_id' => 21]),
-        // Province::create(['province' => 'Azangaro', 'department_id' => 21]),
-        // Province::create(['province' => 'Chucuito', 'department_id' => 21]),
-        // Province::create(['province' => 'El Collao', 'department_id' => 21]),
-        // Province::create(['province' => 'Melgar', 'department_id' => 21]),
-        // Province::create(['province' => 'Carabaya', 'department_id' => 21]),
-        // Province::create(['province' => 'Huancane', 'department_id' => 21]),
-        // Province::create(['province' => 'Sandia', 'department_id' => 21]),
-        // Province::create(['province' => 'San Antonio de Putina', 'department_id' => 21]),
-        // Province::create(['province' => 'Lampa', 'department_id' => 21]),
-        // Province::create(['province' => 'Yunguyo', 'department_id' => 21]),
-        // Province::create(['province' => 'Moho', 'department_id' => 21]),
+        $prov118 = new Province();
+        $prov118 ->province = "Sanchez Carrion";
+        $prov118 ->department_id= 13;
+        $prov118 ->save();
 
-        // // Departamento 22 (San Martin)
-        // Province::create(['province' => 'Bellavista', 'department_id' => 22]),
-        // Province::create(['province' => 'El Dorado', 'department_id' => 22]),
-        // Province::create(['province' => 'Huallaga', 'department_id' => 22]),
-        // Province::create(['province' => 'Lamas', 'department_id' => 22]),
-        // Province::create(['province' => 'Mariscal Caceres', 'department_id' => 22]),
-        // Province::create(['province' => 'Moyobamba', 'department_id' => 22]),
-        // Province::create(['province' => 'Picota', 'department_id' => 22]),
-        // Province::create(['province' => 'Rioja', 'department_id' => 22]),
-        // Province::create(['province' => 'San Martin', 'department_id' => 22]),
-        // Province::create(['province' => 'Tocache', 'department_id' => 22]),
+        $prov119 = new Province();
+        $prov119 ->province = "Santiago de Chuco";
+        $prov119 ->department_id= 13;
+        $prov119 ->save();
 
-        // // Departamento 23 (Tacna)
-        // Province::create(['province' => 'Tacna', 'department_id' => 23]),
-        // Province::create(['province' => 'Candarave', 'department_id' => 23]),
-        // Province::create(['province' => 'Jorge Basadre', 'department_id' => 23]),
-        // Province::create(['province' => 'Tarata', 'department_id' => 23]),
+        $prov120 = new Province();
+        $prov120 ->province = "Viru";
+        $prov120 ->department_id= 13;
+        $prov120 ->save();
 
-        // // Departamento 24 (Tumbes)
-        // Province::create(['province' => 'Tumbes', 'department_id' => 24]),
-        // Province::create(['province' => 'Zarumilla', 'department_id' => 24]),
-        // Province::create(['province' => 'Contralmirante Villar', 'department_id' => 24]),
+        $prov121 = new Province();
+        $prov121 ->province = "Chiclayo";
+        $prov121 ->department_id= 14;
+        $prov121 ->save();
 
-        // // Departamento 25 (Ucayali)
-        // Province::create(['province' => 'Coronel Portillo', 'department_id' => 25]),
-        // Province::create(['province' => 'Atalaya', 'department_id' => 25]),
-        // Province::create(['province' => 'Pade Abad', 'department_id' => 25]),
-        // Province::create(['province' => 'Purus', 'department_id' => 25]),
+        $prov122 = new Province();
+        $prov122 ->province = "Ferreñafe";
+        $prov122 ->department_id= 14;
+        $prov122 ->save();
 
-        // ];
+        $prov123 = new Province();
+        $prov123 ->province = "Lambayeque";
+        $prov123 ->department_id= 14;
+        $prov123 ->save();
         
+       
+        $prov124 = new Province();
+        $prov124 ->province = "Barranca";
+        $prov124 ->department_id= 15;
+        $prov124 ->save();
+
+        $prov125 = new Province();
+        $prov125 ->province = "Cajatambo";
+        $prov125 ->department_id= 15;
+        $prov125 ->save();
         
+        $prov126 = new Province();
+        $prov126 ->province = "Canta";
+        $prov126 ->department_id= 15;
+        $prov126 ->save();
         
+        $prov127 = new Province();
+        $prov127 ->province = "Cañete";
+        $prov127 ->department_id= 15;
+        $prov127 ->save();
+
+        $prov128 = new Province();
+        $prov128 ->province = "Huaral";
+        $prov128 ->department_id= 15;
+        $prov128 ->save();
+
+        $prov129 = new Province();
+        $prov129 ->province = "Huarochiri";
+        $prov129 ->department_id= 15;
+        $prov129 ->save();
+
+        $prov130 = new Province();
+        $prov130 ->province = "Huara";
+        $prov130 ->department_id= 15;
+        $prov130 ->save();
+
+        $prov131 = new Province();
+        $prov131 ->province = "Lima";
+        $prov131 ->department_id= 15;
+        $prov131 ->save();
+
+        $prov132 = new Province();
+        $prov132 ->province = "Oyon";
+        $prov132 ->department_id= 15;
+        $prov132 ->save();
+
+        $prov133 = new Province();
+        $prov133 ->province = "Yautos";
+        $prov133 ->department_id= 15;
+        $prov133 ->save();
+
+        $prov134 = new Province();
+        $prov134 ->province = "Maynas";
+        $prov134 ->department_id= 16;
+        $prov134 ->save();
+
+        $prov135 = new Province();
+        $prov135 ->province = "Putumayo";
+        $prov135 ->department_id= 16;
+        $prov135 ->save();
+
+        $prov136 = new Province();
+        $prov136 ->province = "Alto Amazonas";
+        $prov136 ->department_id= 16;
+        $prov136 ->save();
+
+        $prov137 = new Province();
+        $prov137 ->province = "Loreto";
+        $prov137 ->department_id= 16;
+        $prov137 ->save();
+
+        $prov138 = new Province();
+        $prov138 ->province = "Mariscal Ramon Castilla";
+        $prov138 ->department_id= 16;
+        $prov138 ->save();
+
+        $prov139 = new Province();
+        $prov139 ->province = "Requena";
+        $prov139 ->department_id= 16;
+        $prov139 ->save();
+
+        $prov140 = new Province();
+        $prov140 ->province = "Ucayali";
+        $prov140 ->department_id= 16;
+        $prov140 ->save();
+
+        $prov141 = new Province();
+        $prov141 ->province = "Datem del Marañon";
+        $prov141 ->department_id= 16;
+        $prov141 ->save();
+
+
+        $prov142 = new Province();
+        $prov142 ->province = "Tambopata";
+        $prov142 ->department_id= 17;
+        $prov142 ->save();
+
+        $prov143 = new Province();
+        $prov143 ->province = "Manu";
+        $prov143 ->department_id= 17;
+        $prov143 ->save();
+
+        $prov144 = new Province();
+        $prov144 ->province = "Tahuamanu";
+        $prov144 ->department_id= 17;
+        $prov144 ->save();
+
+        $prov145 = new Province();
+        $prov145 ->province = "Mariscal Nieto";
+        $prov145 ->department_id= 18;
+        $prov145 ->save();
+
+        $prov146 = new Province();
+        $prov146 ->province = "General Sanchez";
+        $prov146 ->department_id= 18;
+        $prov146 ->save();
+
+        $prov147 = new Province();
+        $prov147 ->province = "Ilo";
+        $prov147 ->department_id= 18;
+        $prov147 ->save();
+
+        $prov148 = new Province();
+        $prov148 ->province = "Pasco";
+        $prov148 ->department_id= 19;
+        $prov148 ->save();
+
+        $prov149 = new Province();
+        $prov149 ->province = "Oxapampa";
+        $prov149 ->department_id= 19;
+        $prov149 ->save();
+
+        $prov149 = new Province();
+        $prov149 ->province = "Daniel A. Carrion";
+        $prov149 ->department_id= 19;
+        $prov149 ->save();
+
+        $prov150 = new Province();
+        $prov150 ->province = "Ayabaca";
+        $prov150 ->department_id= 20;
+        $prov150 ->save();
+
+        $prov151 = new Province();
+        $prov151 ->province = "Huancabamba";
+        $prov151 ->department_id= 20;
+        $prov151 ->save();
+
+        $prov152 = new Province();
+        $prov152 ->province = "Morropon";
+        $prov152 ->department_id= 20;
+        $prov152 ->save();
+
+        $prov153 = new Province();
+        $prov153 ->province = "Piura";
+        $prov153 ->department_id= 20;
+        $prov153 ->save();
+
+        $prov154 = new Province();
+        $prov154 ->province = "Sechura";
+        $prov154 ->department_id= 20;
+        $prov154 ->save();
+
+        $prov155 = new Province();
+        $prov155 ->province = "Sullana";
+        $prov155 ->department_id= 20;
+        $prov155 ->save();
+
+        $prov156 = new Province();
+        $prov156 ->province = "Paita";
+        $prov156 ->department_id= 20;
+        $prov156 ->save();
+
+        $prov157 = new Province();
+        $prov157 ->province = "Talara";
+        $prov157 ->department_id= 20;
+        $prov157 ->save();
+
+        $prov158 = new Province();
+        $prov158 ->province = "San Roman";
+        $prov158 ->department_id= 21;
+        $prov158 ->save();
+
+        $prov159 = new Province();
+        $prov159 ->province = "Puno";
+        $prov159 ->department_id= 21;
+        $prov159 ->save();
+
+        $prov160 = new Province();
+        $prov160 ->province = "Azangaro";
+        $prov160 ->department_id= 21;
+        $prov160 ->save();
+
+        $prov161 = new Province();
+        $prov161 ->province = "Chucuito";
+        $prov161 ->department_id= 21;
+        $prov161 ->save();
+
+        $prov162 = new Province();
+        $prov162 ->province = "El Collao";
+        $prov162 ->department_id= 21;
+        $prov162 ->save();
+
+        $prov163 = new Province();
+        $prov163 ->province = "Melgar";
+        $prov163 ->department_id= 21;
+        $prov163 ->save();
+
+        $prov164 = new Province();
+        $prov164 ->province = "Carabaya";
+        $prov164 ->department_id= 21;
+        $prov164 ->save();
+
+        $prov165 = new Province();
+        $prov165 ->province = "Huancane";
+        $prov165 ->department_id= 21;
+        $prov165 ->save();
+
+        $prov166 = new Province();
+        $prov166 ->province = "Sandia";
+        $prov166 ->department_id= 21;
+        $prov166 ->save();
+
+        $prov167 = new Province();
+        $prov167 ->province = "San Antonio de Putina";
+        $prov167 ->department_id= 21;
+        $prov167 ->save();
+
+        $prov168 = new Province();
+        $prov168 ->province = "Lampa";
+        $prov168 ->department_id= 21;
+        $prov168 ->save();
+
+        $prov169 = new Province();
+        $prov169 ->province = "Yunguyo";
+        $prov169 ->department_id= 21;
+        $prov169 ->save();
+
+        $prov170 = new Province();
+        $prov170 ->province = "Moho";
+        $prov170 ->department_id= 21;
+        $prov170 ->save();
+
+        $prov171 = new Province();
+        $prov171 ->province = "Bellavista";
+        $prov171 ->department_id= 22;
+        $prov171 ->save();
+
+        $prov172 = new Province();
+        $prov172 ->province = "El dorado";
+        $prov172 ->department_id= 22;
+        $prov172 ->save();
+
+        $prov173 = new Province();
+        $prov173 ->province = "Huallaga";
+        $prov173 ->department_id= 22;
+        $prov173 ->save();
+
+        $prov174 = new Province();
+        $prov174 ->province = "Lamas";
+        $prov174 ->department_id= 22;
+        $prov174 ->save();
+
+        $prov175 = new Province();
+        $prov175 ->province = "Mariscal Caceres";
+        $prov175 ->department_id= 22;
+        $prov175 ->save();
+
+        $prov176 = new Province();
+        $prov176 ->province = "Moyobamba";
+        $prov176 ->department_id= 22;
+        $prov176 ->save();
+
+        $prov177 = new Province();
+        $prov177 ->province = "Picota";
+        $prov177 ->department_id= 22;
+        $prov177 ->save();
+
+        $prov178 = new Province();
+        $prov178 ->province = "Rioja";
+        $prov178 ->department_id= 22;
+        $prov178 ->save();
+
+        $prov179 = new Province();
+        $prov179 ->province = "San Martin";
+        $prov179 ->department_id= 22;
+        $prov179 ->save();
+
+        $prov180 = new Province();
+        $prov180 ->province = "Tocache";
+        $prov180 ->department_id= 22;
+        $prov180 ->save();
+
+
+        $prov181 = new Province();
+        $prov181 ->province = "Tacna";
+        $prov181 ->department_id= 23;
+        $prov181 ->save();
+
+        $prov182 = new Province();
+        $prov182 ->province = "Candarave";
+        $prov182 ->department_id= 23;
+        $prov182 ->save();
+
+        $prov183 = new Province();
+        $prov183 ->province = "Jorge Basadre";
+        $prov183 ->department_id= 23;
+        $prov183 ->save();
+
+        $prov184 = new Province();
+        $prov184 ->province = "Tarata";
+        $prov184 ->department_id= 23;
+        $prov184 ->save();
+
+        $prov185 = new Province();
+        $prov185 ->province = "Tumbes";
+        $prov185 ->department_id= 24;
+        $prov185 ->save();
+
+        $prov186 = new Province();
+        $prov186 ->province = "Zarumilla";
+        $prov186 ->department_id= 24;
+        $prov186 ->save();
+
+        $prov187 = new Province();
+        $prov187 ->province = "Contralmirante";
+        $prov187 ->department_id= 24;
+        $prov187 ->save();
+
+        $prov188 = new Province();
+        $prov188 ->province = "Coronel Portillo";
+        $prov188 ->department_id= 25;
+        $prov188 ->save();
+
+        $prov189 = new Province();
+        $prov189 ->province = "Atalaya";
+        $prov189 ->department_id= 25;
+        $prov189 ->save();
+
+        $prov190 = new Province();
+        $prov190 ->province = "Padre Abad";
+        $prov190 ->department_id= 25;
+        $prov190 ->save();
+
+        $prov191 = new Province();
+        $prov191 ->province = "Purus";
+        $prov191->department_id= 25;
+        $prov191 ->save();
+
     }
 }

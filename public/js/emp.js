@@ -40,7 +40,7 @@ file.addEventListener('change', e => {
 
 
 function validateWord(input) {
-    input.value = input.value.replace(/[^a-zA-Z]/g, '');
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
   }
 function validateNumber(input) {
     input.value = input.value.replace(/\D/g, '');

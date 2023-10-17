@@ -9,18 +9,21 @@ use App\Models\Gender;
 use Illuminate\Http\Request;
 use Psy\Readline\Hoa\Console;
 use Illuminate\Support\Facades\Storage;
-
+use Livewire\WithPagination;
+use Illuminate\Pagination\LengthAwarePaginator;
 use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\isNull;
 
 class ControlEmployee extends Controller
 {
+    use WithPagination;
+
     public function admin(){
         return view('FormAdmin');
     }
 
     public function recordEmployee(){
-        $employees = Employee::all();
+        $employees = Employee::orderby('name')->paginate(10);
         return view('FormRecordEmployee',compact('employees'));
     }
 
@@ -73,7 +76,9 @@ class ControlEmployee extends Controller
                 $employee->photo = $imgContents;
             }
             $employee->save();
-          
+            $employees = Employee::all();
+            return view('FormRecordEmployee',compact('employees'));
+           
         }
         catch(\Exception $e){
             echo $e;
