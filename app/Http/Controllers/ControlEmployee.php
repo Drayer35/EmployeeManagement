@@ -11,6 +11,8 @@ use Psy\Readline\Hoa\Console;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithPagination;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
+
 use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\isNull;
 
@@ -36,7 +38,7 @@ class ControlEmployee extends Controller
         $genders= Gender::all();
         $departments= Department::all();
         $statuses= CivilStatus::all();
-        return view('FormEmployee',compact('genders','statuses'));
+        return view('FormEmployee',compact('genders','statuses','departments'));
     }
 
     public function store(Request $request){
@@ -76,7 +78,7 @@ class ControlEmployee extends Controller
                 $employee->photo = $imgContents;
             }
             $employee->save();
-            $employees = Employee::all();
+            $employees = Employee::orderby('name')->paginate(10);
             return view('FormRecordEmployee',compact('employees'));
            
         }
@@ -85,5 +87,63 @@ class ControlEmployee extends Controller
         } 
     }
 
-  
+
+    public function edit(string $id)
+    {
+        $employee = Employee::find($id);
+        $genders= Gender::all();
+        $statuses= CivilStatus::all();
+        return view('EditEmployee',compact('employee','genders','statuses'));
+    }
+
+ 
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'add-photo'=>'image|max:2068',
+            'name'=>'required',
+            'lastName'=>'required',
+            'dni'=>'required',
+            'phone'=>'required',
+            'birthdate'=>'required',
+            'genderList'=>'required',
+            'statusList'=>'required',
+            'email'=>'required',
+            'departmentList'=>'required',
+            'provinceList'=>'required',
+            'profession'=>'required',
+            'dateAdmission'=>'required'            
+        ]);
+        
+        $employee =Employee::find($id);
+        $employee->date_admision= $request->dateAdmission;
+        $employee->name =$request->name;
+        $employee->last_name=$request->lastName;
+        $employee->birthdate=$request->birthdate;
+        $employee->dni=$request->dni;
+        $employee->phone=$request->phone;
+        $employee->profession=$request->profession;
+        $employee->email = $request->email;
+        $employee->status_id =$request->statusList;
+        $employee->gender_id=$request->genderList;
+        $employee->department_id=$request->departmentList;
+        $employee->province_id=$request->provinceList;
+        if ($request->hasFile('add-photo')) {
+            $img = $request->file('add-photo');
+            $imgContents = file_get_contents($img->getPathname());
+            $employee->photo = $imgContents;
+        }
+        $employee->save();
+        $employees = Employee::orderby('name')->paginate(10);
+        return view('FormRecordEmployee',compact('employees'));
+    
+    }
+
+    public function destroy(string $id)
+    {
+        $employee = Employee::find($id);
+        $employee->delete();
+
+        return redirect("formRecord");
+    }
 }

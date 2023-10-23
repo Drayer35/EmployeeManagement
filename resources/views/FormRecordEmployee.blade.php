@@ -40,9 +40,8 @@
                     <th scope="col" class="px-6 py-3">
                         {{__('Birthdate')}}
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{__('Operation')}}
-                    </th>
+                    <th scope="col" class="px-6 py-3"> {{__('Edit')}}</th>
+                    <th scope="col" class="px-6 py-3">{{__('Delete')}} </th>
                 </tr>
             </thead>
             <tbody>
@@ -78,45 +77,24 @@
                             {{ $employee->birthdate }}
                         </td>
                         <td class="px-6 py-4">
-                            <button class="btn-table btn-table-edit" onclick="calling()">{{__('Edit')}}</button>
-                            <button class="btn-table btn-table-delete">{{__('Delete')}}</button>
+                            <a href="{{ route('formemployee.edit', ['id' => $employee->id]) }}" class="bg-blue-600 hover:bg-blue-700  text-white font-bold py-2 px-4 rounded">{{__('Edit')}}</a>
                         </td>
+                        <td>
+                            <form action="{{ route('formemployee.delete', ['id' => $employee->id]) }}" method="POST">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit"  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{{__('Delete')}}</button>
+                            </form>
+                        </td>
+                       
                     </tr>
                 @endforeach
             </tbody>
         </table>
-      {{--  <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
-         
-             <ul class="inline-flex -space-x-px text-sm h-8">
-                <li>
-                    <a href="#" class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                </li>
-                <li>
-                    <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                </li>
-            </ul> 
-           
-        </nav>--}}
         <div class="px-6 py-3">
             {{$employees->links()}}
         </div>
     </div>
-    {{-- @include('livewire.edit-employee') --}}
     <script src="{{ asset('js/recordEmployes.js') }}"></script>
 @endsection
 

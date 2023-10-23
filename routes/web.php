@@ -26,10 +26,6 @@ Route::controller(ControlUser::class)->group(function(){
 });
 
 
-
-
-
-
 Route::controller(ControlEmployee::class)->group(function(){
 
     Route::get('/admin','admin')->name('formAdmin');
@@ -42,7 +38,14 @@ Route::controller(ControlEmployee::class)->group(function(){
 
     Route::post('/formEmployee','store')->name('formemployee.store');
 
+    Route::get('/EditEmployee/{id}', 'edit')->name('formemployee.edit');
+    
+    Route::put('/UpdateEmployee/{id}', 'update')->name('formemployee.update');
+
+    Route::delete('/DeletEmployee/{id}', 'destroy')->name('formemployee.delete');
+    
 });
+
 
 
 Route::middleware([
