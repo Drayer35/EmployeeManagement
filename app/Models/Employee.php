@@ -29,4 +29,19 @@ class Employee extends Model
         return $this->belongsTo(Province::class,'province_id','id');
     }
 
+    public function countryDomicile(){
+        return $this->belongsTo(Country::class,'country_domicile_id','id');
+    }
+
+    public function countryBirth(){
+        return $this->belongsTo(Country::class,'country_birth_id','id');
+    }
+    public function districtEmployee(){
+        return $this->belongsTo(District::class,'district_id','id');
+    }
+           
+    public function degreeInstruction(){
+        return $this->belongsTo(DegreeInstruction::class,'degree_instruction_id','id');
+    }
+
 }

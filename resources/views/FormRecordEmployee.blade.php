@@ -20,25 +20,22 @@
                         {{__('Name')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Dni')}}
+                        {{__('Direccion')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Civil Status')}}
+                        {{__('Domicilio Propio')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Department')}}
+                        {{__('PAIS_NACIMIENTO')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Province')}}
+                        {{__('PAIS_RESIDENCIA')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Profession')}}
+                        {{__('DISTRITO')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Admission')}}
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{__('Birthdate')}}
+                        {{__('NUM_HIJOS')}}
                     </th>
                     <th scope="col" class="px-6 py-3"> {{__('Edit')}}</th>
                     <th scope="col" class="px-6 py-3">{{__('Delete')}} </th>
@@ -56,25 +53,22 @@
                             {{ $employee->name }} {{ $employee->last_name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->dni }}
+                            {{ $employee->address }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->status->name }}
+                            {{ $employee->own_home }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->department->department }}
+                            {{ $employee->countryDomicile->name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->province->province }}
+                            {{ $employee->countryBirth->name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->profession }}
+                            {{ optional($employee->districtEmployee)->name ?? 'NULL' }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->date_admision }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $employee->birthdate }}
+                            {{ $employee->children}}
                         </td>
                         <td class="px-6 py-4">
                             <a href="{{ route('formemployee.edit', ['id' => $employee->id]) }}" class="bg-blue-600 hover:bg-blue-700  text-white font-bold py-2 px-4 rounded">{{__('Edit')}}</a>
