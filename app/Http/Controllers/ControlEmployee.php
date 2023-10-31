@@ -26,19 +26,19 @@ class ControlEmployee extends Controller
 
     public function recordEmployee(){
         $employees = Employee::orderby('name')->paginate(10);
-        return view('FormRecordEmployee',compact('employees'));
+        return view('employees.FormRecordEmployee',compact('employees'));
     }
 
     
     public function assistEmployee(){
-        return view('FormAssists');
+        return view('employees.FormAssists');
     }
 
     public function register(){
         $genders= Gender::all();
         $departments= Department::all();
         $statuses= CivilStatus::all();
-        return view('FormEmployee',compact('genders','statuses','departments'));
+        return view('employees.FormEmployee',compact('genders','statuses','departments'));
     }
 
     public function store(Request $request){
@@ -93,7 +93,7 @@ class ControlEmployee extends Controller
         $employee = Employee::find($id);
         $genders= Gender::all();
         $statuses= CivilStatus::all();
-        return view('EditEmployee',compact('employee','genders','statuses'));
+        return view('employees.EditEmployee',compact('employee','genders','statuses'));
     }
 
  
@@ -135,7 +135,7 @@ class ControlEmployee extends Controller
         }
         $employee->save();
         $employees = Employee::orderby('name')->paginate(10);
-        return view('FormRecordEmployee',compact('employees'));
+        return view('employees.FormRecordEmployee',compact('employees'));
     
     }
 

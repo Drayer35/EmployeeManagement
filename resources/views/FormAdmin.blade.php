@@ -4,8 +4,8 @@
 {{__('Admin')}}
 @endsection
 
-
 @section('content-section')
-    <h1>Admin - Section</h1>
-    @livewire('edit-employee')
+<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+   
+</h2>
 @endsection

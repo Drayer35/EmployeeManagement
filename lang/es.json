@@ -53,8 +53,8 @@
     "Employees":"Empleados",
     "DataBase":"Base de Datos",
     "Assists":"Asistencias",
-    "Birthdate":"Fecha-Nacimiento",
-    "Date Admission":"Fecha-Ingreso",
+    "Birthdate":"Fecha de Nacimiento",
+    "Date Admission":"Fecha de Ingreso",
     "LastName":"Apellido",
     "Last Name":"Apellido",
     "Civil Status":"Estado Civil",
@@ -69,6 +69,11 @@
     "Record Employee":"Registros",
     "Department":"Departamento",
     "Province":"Provincia",
+    "Select Genero":"Seleccionar Genero",
+    "Select Status":"Seleccionar Estado",
     "Select Photo":"Seleccionar Foto",
+    "Select Province":"Seleccionar Provincia",
+    "Select Department":"Seleccionar Departamento",
+    "Document National Identity":"Document Nacional de Identidad",
     "All identity information entered will be placed in a database.":"Toda información ingresada será registrada en una Base de Datos"
 }

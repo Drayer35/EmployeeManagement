@@ -52,13 +52,11 @@
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <script src="{{asset('js/app.js')}}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Righteous&display=swap" rel="stylesheet">
-
-   
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    @vite('resources/css/app.css')
 </head>
 <body>
-    @livewireScripts()
+    @livewireScripts
     <section class="parent-cont">
         <div class="column-option">
             <div class="content-title">

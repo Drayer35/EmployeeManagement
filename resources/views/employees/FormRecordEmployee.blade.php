@@ -20,22 +20,19 @@
                         {{__('Name')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Direccion')}}
+                        {{__('Dni')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('Domicilio Propio')}}
+                        {{__('Civil Status')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('PAIS_NACIMIENTO')}}
+                        {{__('Department')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('PAIS_RESIDENCIA')}}
+                        {{__('Province')}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        {{__('DISTRITO')}}
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{__('NUM_HIJOS')}}
+                        {{__('Profession')}}
                     </th>
                     <th scope="col" class="px-6 py-3"> {{__('Edit')}}</th>
                     <th scope="col" class="px-6 py-3">{{__('Delete')}} </th>
@@ -49,28 +46,46 @@
                                 <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </div>
                         </td>
-                        <td class="px-6 py-4">
-                            {{ $employee->name }} {{ $employee->last_name }}
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-10 w-10">
+                                    {{-- <img src="data:image/png;base64,{{ base64_encode($employee->photo)}}"> --}}
+
+                                    <img class="img" id="img" src="
+                                    @if (is_null($employee->photo))
+                                        {{ asset('img/photo.png') }}
+                                    @else
+                                        data:image/png;base64,{{ base64_encode($employee->photo) }}
+                                    @endif">
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">
+                                        {{ $employee->name }} {{ $employee->last_name }}
+                                    </div>
+                                    <div class="text-sm text-gray-500">
+                                        {{ $employee->email }} 
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->address }}
+                            {{ $employee->dni }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->own_home }}
+                            {{ $employee->status->name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->countryDomicile->name }}
+                            {{ $employee->department->department }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $employee->countryBirth->name }}
+                            {{ $employee->province->province }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ optional($employee->districtEmployee)->name ?? 'NULL' }}
+                            {{ $employee->profession }}
                         </td>
+                    
                         <td class="px-6 py-4">
-                            {{ $employee->children}}
-                        </td>
-                        <td class="px-6 py-4">
+                            @livewire('edit-employee',['id' => $employee->id])
                             <a href="{{ route('formemployee.edit', ['id' => $employee->id]) }}" class="bg-blue-600 hover:bg-blue-700  text-white font-bold py-2 px-4 rounded">{{__('Edit')}}</a>
                         </td>
                         <td>
@@ -80,7 +95,6 @@
                                 <button type="submit"  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{{__('Delete')}}</button>
                             </form>
                         </td>
-                       
                     </tr>
                 @endforeach
             </tbody>
