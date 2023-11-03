@@ -19,26 +19,26 @@ use function PHPUnit\Framework\isNull;
 class ControlEmployee extends Controller
 {
     use WithPagination;
-
+   
     public function admin(){
-        return view('FormAdmin');
+        return view('Admin');
     }
 
-    public function recordEmployee(){
+    public function record(){
         $employees = Employee::orderby('name')->paginate(10);
-        return view('employees.FormRecordEmployee',compact('employees'));
+        return view('employees.Records',compact('employees'));
     }
 
     
     public function assistEmployee(){
-        return view('employees.FormAssists');
+        return view('employees.Assists');
     }
 
     public function register(){
         $genders= Gender::all();
         $departments= Department::all();
         $statuses= CivilStatus::all();
-        return view('employees.FormEmployee',compact('genders','statuses','departments'));
+        return view('employees.Register',compact('genders','statuses','departments'));
     }
 
     public function store(Request $request){
@@ -144,6 +144,6 @@ class ControlEmployee extends Controller
         $employee = Employee::find($id);
         $employee->delete();
 
-        return redirect("formRecord");
+        return redirect("Record");
     }
 }

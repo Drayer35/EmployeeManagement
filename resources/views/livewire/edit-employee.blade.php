@@ -1,5 +1,5 @@
 <div>
-    <x-danger-button wire:click="$set('open',true)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
+    <x-danger-button wire:click="$set('open',true)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded select-none" >
         {{__('Edit')}}
      </x-danger-button>
   
@@ -8,7 +8,7 @@
         <x-slot name="content">
             <div class="w-full">
                 <form class="" id="form-employee" name="form-employee"
-                action="{{ route('formemployee.update', ['id' => $employee->id]) }}" 
+                action="{{ route('Employee.update', ['id' => $employee->id]) }}" 
                 method="POST" enctype="multipart/form-data">
                 @method("PUT")
                 @csrf 

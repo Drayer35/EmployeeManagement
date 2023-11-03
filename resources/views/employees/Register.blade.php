@@ -19,7 +19,7 @@
                     </button>
             </div>
         </div>
-        <form class="form-employee"  id="form-employee" action="{{route('formemployee.store')}}" method="POST"method="POST" enctype="multipart/form-data">
+        <form class="form-employee"  id="form-employee" action="{{route('Employee.store')}}" method="POST"method="POST" enctype="multipart/form-data">
             @csrf 
            
             <input type="file"  class="photo"  name="add-photo" id="add-photo" accept="image/*" value="{{old('add-photo')}}"> 

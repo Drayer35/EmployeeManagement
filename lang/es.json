@@ -75,5 +75,7 @@
     "Select Province":"Seleccionar Provincia",
     "Select Department":"Seleccionar Departamento",
     "Document National Identity":"Document Nacional de Identidad",
-    "All identity information entered will be placed in a database.":"Toda información ingresada será registrada en una Base de Datos"
+    "All identity information entered will be placed in a database.":"Toda información ingresada será registrada en una Base de Datos",
+    "Data not found.":"Datos no econtrados.",
+    "Add Employee":"Agregar Empleado"
 }

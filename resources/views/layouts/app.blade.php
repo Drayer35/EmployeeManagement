@@ -51,6 +51,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <script src="{{asset('js/app.js')}}"></script>
+    <link rel="icon" href="{{asset('img/main.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Righteous&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
@@ -81,7 +82,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/group1.png') }}" >
                                 </div>
-                                <a href="{{route('formEmployee')}}">{{__('Employees')}}</a>
+                                <a href="{{route('registerEmployee')}}">{{__('Employees')}}</a>
                             </div>
                         </li>
                         <li class="option">
@@ -89,7 +90,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/database1.png') }}" >
                                 </div>
-                                <a href="{{route('formRecord')}}">{{__('DataBase')}}</a>
+                                <a href="{{route('records')}}">{{__('DataBase')}}</a>
                             </div>
                         </li>
                         <li class="option">
@@ -97,7 +98,7 @@
                                 <div class="contenedor-imagen">
                                     <img src="{{ asset('img/list1.png') }}" >
                                 </div>
-                                <a href="{{('formAssists')}}">{{__('Assists')}}</a>
+                                <a href="{{('Assists')}}">{{__('Assists')}}</a>
                             </div>     
                         </li> 
                         <li class="option">

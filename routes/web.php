@@ -3,6 +3,8 @@
 use App\Http\Controllers\ControlEmployee;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ControlUser;
+use App\Http\Livewire\Employee\Record;
+use App\Http\Livewire\Employee\RecordEmployee;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,23 +32,25 @@ Route::controller(ControlEmployee::class)->group(function(){
 
     Route::get('/admin','admin')->name('formAdmin');
 
-    Route::get('/formEmployee','register')->name('formEmployee');
+    Route::get('/Register','register')->name('registerEmployee');
 
-    Route::get('/formRecord','recordEmployee')->name('formRecord');
+    Route::get('/Records','record')->name('records');
 
-    Route::get('/formAssists','assistEmployee')->name('formAssists');
+    Route::get('/Assists','assistEmployee')->name('formAssists');
 
-    Route::post('/formEmployee','store')->name('formemployee.store');
+    Route::post('/Save','store')->name('Employee.store');
 
-    Route::get('/EditEmployee/{id}', 'edit')->name('formemployee.edit');
+    Route::get('/EditEmployee/{id}', 'edit')->name('Employee.edit');
     
-    Route::put('/UpdateEmployee/{id}', 'update')->name('formemployee.update');
+    Route::put('/UpdateEmployee/{id}', 'update')->name('Employee.update');
 
-    Route::delete('/DeletEmployee/{id}', 'destroy')->name('formemployee.delete');
+    Route::delete('/DeleteEmployee/{id}', 'destroy')->name('Employee.delete');
     
 });
 
-
+Route::controller(Record::class)->group(function(){
+   
+});
 
 Route::middleware([
     'auth:sanctum',

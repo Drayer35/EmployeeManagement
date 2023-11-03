@@ -21,7 +21,7 @@
                 {{__('Province')}} 
             </label>
             <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                    id="province-list" name="provinceList" class="select">
+                    id="province-list" name="provinceList" class="select"  >
                 <option value="" disabled selected>{{__('Select Province')}}</option> 
                 @foreach ($provinces as  $prov)
                     <option value="{{$prov['id']}}" @if ($prov->id == $employee->province_id ){{'selected'}} @endif>{{$prov->province}}</option>
