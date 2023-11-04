@@ -176,7 +176,7 @@
                 </div>
                                  
             </form>
-            </div>
+        </div>
 
             
       </x-slot>

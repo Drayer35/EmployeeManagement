@@ -6,6 +6,10 @@ use App\Models\CivilStatus;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Gender;
+use App\Models\DegreeInstruction;
+use App\Models\District;
+use App\Models\CountryBirth;
+use App\Models\CountryDomicile;
 use Illuminate\Http\Request;
 use Psy\Readline\Hoa\Console;
 use Illuminate\Support\Facades\Storage;
@@ -36,9 +40,9 @@ class ControlEmployee extends Controller
 
     public function register(){
         $genders= Gender::all();
-        $departments= Department::all();
         $statuses= CivilStatus::all();
-        return view('employees.Register',compact('genders','statuses','departments'));
+        $departments= Department::all();
+        return view('employees.Register',compact('genders','statuses'));
     }
 
     public function store(Request $request){
