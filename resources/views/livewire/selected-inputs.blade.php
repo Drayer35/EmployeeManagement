@@ -5,13 +5,12 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                 {{__('Country Bitrth')}} 
             </label>
-            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="countriesList" name="countriesList" class="select">
-                <option value="0" disabled selected>{{__('Select Country')}}</option>
-                @if ($countries)
+            <select id="countriesList" name="countriesList" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" >
+                <option  disabled selected>{{__('Select Country')}}</option>
                     @foreach ($countries as $country)
                         <option value="{{$country['country_name']}}">{{$country['country_name']}}</option>
                     @endforeach
-                @endif
             </select>
             @error('countriesList')
                 <small class="alert text-red-600">{{$message}}</small>
@@ -23,13 +22,11 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                 {{__('Country Domicile')}} 
             </label>
-            <select wire:change='getDepartments()' wire:model='' class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="countriesList" name="countriesList" class="select">
-                <option value="0" disabled selected>{{__('Select Country')}}</option>
-                @if ($countries)
+            <select wire:change='updatedepartments()' wire:model='departments'  class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="countriesList" name="countriesList" >
+                <option value="default" disabled selected>{{__('Select Country')}}</option>
                     @foreach ($countries as $country)
                         <option value="{{$country['country_name']}}">{{$country['country_name']}}</option>
                     @endforeach
-                @endif
             </select>
             @error('countriesDomicile')
                 <small class="alert text-red-600">{{$message}}</small>
@@ -37,6 +34,7 @@
         </div>
       
         {{-- DEPARTMENT --}}
+
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                 {{__('Department')}} 
@@ -44,15 +42,14 @@
             <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
                     id="department-list" name="departmentList" class="select" wire:model='selectedDepa' >
                 <option value="0" disabled selected>{{__('Select Department')}}</option>       
-                @foreach ($departments as $dep ) 
-                    <option value="{{$dep['name']}}"></option>
-                @endforeach    
+                    @foreach ($departments as $dep)
+                    <option value="{{$dep['state_name']}}">{{$dep['state_name']}}</option>
+                    @endforeach
             </select>
             @error('departmentList')
                 <small class="alert text-red-600">{{$message}}</small>
             @enderror
         </div>
-
         {{-- CITY 
         <div class="w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
