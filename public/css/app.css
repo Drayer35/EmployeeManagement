@@ -4,9 +4,8 @@
 }
 *{
     margin: 0;
-    padding: 0; font-weight: bold;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
 }
 body{
     background-color:WHITE;  
@@ -16,6 +15,7 @@ body{
     grid-template-columns: 0.2fr 1fr;
     height: 100vh;
 }
+
 ::selection {
     background-color: #C9EEFC;
 }
@@ -44,7 +44,7 @@ body{
     align-self: center;
     color: #302F2F ;
 }
-
+ /*  */
 .contenedor-logo {
     user-select: none;
     max-width: 60px; 
@@ -76,6 +76,7 @@ a{
     font-weight: bold;
     font-size: 1.2rem;
     margin: 8px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .background-option{
@@ -107,6 +108,7 @@ a{
     border-left: 10px #FB5D4D solid;
 }
 
+/*  */
 .background-option:hover a{
     color: #FB5D4D;
 }

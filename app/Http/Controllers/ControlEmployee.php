@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Gender;
 use App\Models\DegreeInstruction;
+use Illuminate\Support\Facades\Http;
 use App\Models\District;
 use App\Models\CountryBirth;
 use App\Models\CountryDomicile;
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\WithPagination;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Log;
-
 use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\isNull;
 
 class ControlEmployee extends Controller
 {
     use WithPagination;
-   
+    public $token;
+    public $countries;
     public function admin(){
         return view('Admin');
     }
@@ -33,7 +34,6 @@ class ControlEmployee extends Controller
         return view('employees.Records',compact('employees'));
     }
 
-    
     public function assistEmployee(){
         return view('employees.Assists');
     }
@@ -42,7 +42,10 @@ class ControlEmployee extends Controller
         $genders= Gender::all();
         $statuses= CivilStatus::all();
         $departments= Department::all();
-        return view('employees.Register',compact('genders','statuses'));
+        $degrees =DegreeInstruction::all(); 
+        $this->getCountries();
+        $countries = $this->countries;
+        return view('employees.Register',compact('genders','statuses','degrees','countries'));
     }
 
     public function store(Request $request){
@@ -50,12 +53,17 @@ class ControlEmployee extends Controller
             'add-photo'=>'image|max:2068',
             'name'=>'required',
             'lastName'=>'required',
-            'dni'=>'required',
-            'phone'=>'required',
+            'dni'=>'required|unique',
+            'phone'=>'required|unique',
             'birthdate'=>'required',
             'genderList'=>'required',
             'statusList'=>'required',
-            'email'=>'required',
+            'email'=>'required|unique',
+            'degreeInstruction'=> 'required',
+            'address'=> 'required',
+            'childrens'=> 'required',
+            'ownHome'=> 'required',
+            'countryBirth'=> 'required',
             'departmentList'=>'required',
             'provinceList'=>'required',
             'profession'=>'required',
@@ -64,18 +72,23 @@ class ControlEmployee extends Controller
         
         try{
             $employee = new Employee();
-            $employee->date_admision= $request->dateAdmission;
             $employee->name =$request->name;
             $employee->last_name=$request->lastName;
             $employee->birthdate=$request->birthdate;
+            $employee->country_birth = $request->countryBirth;
+            $employee->gender_id=$request->genderList;
             $employee->dni=$request->dni;
             $employee->phone=$request->phone;
-            $employee->profession=$request->profession;
             $employee->email = $request->email;
-            $employee->status_id =$request->statusList;
-            $employee->gender_id=$request->genderList;
             $employee->department_id=$request->departmentList;
             $employee->province_id=$request->provinceList;
+            $employee->address = $request->address;
+            $employee->own_home=$request->ownHome;
+            $employee->status_id =$request->statusList;
+            $employee->children= $request->childrens;
+            $employee->degree_instruction_id=$request->degreeInstruction;
+            $employee->profession=$request->profession;
+            $employee->date_admission= $request->dateAdmission;
             if ($request->hasFile('add-photo')) {
                 $img = $request->file('add-photo');
                 $imgContents = file_get_contents($img->getPathname());
@@ -83,7 +96,7 @@ class ControlEmployee extends Controller
             }
             $employee->save();
             $employees = Employee::orderby('name')->paginate(10);
-            return view('FormRecordEmployee',compact('employees'));
+            return view('employees.Records',compact('employees'));
            
         }
         catch(\Exception $e){
@@ -120,18 +133,23 @@ class ControlEmployee extends Controller
         ]);
         
         $employee =Employee::find($id);
-        $employee->date_admision= $request->dateAdmission;
         $employee->name =$request->name;
         $employee->last_name=$request->lastName;
         $employee->birthdate=$request->birthdate;
+        $employee->country_birth = $request->countryBirth;
+        $employee->gender_id=$request->genderList;
         $employee->dni=$request->dni;
         $employee->phone=$request->phone;
-        $employee->profession=$request->profession;
         $employee->email = $request->email;
-        $employee->status_id =$request->statusList;
-        $employee->gender_id=$request->genderList;
         $employee->department_id=$request->departmentList;
         $employee->province_id=$request->provinceList;
+        $employee->address = $request->address;
+        $employee->own_home=$request->ownHome;
+        $employee->status_id =$request->statusList;
+        $employee->children= $request->childrens;
+        $employee->degree_instruction_id=$request->degreeInstruction;
+        $employee->profession=$request->profession;
+        $employee->date_admission= $request->dateAdmission;
         if ($request->hasFile('add-photo')) {
             $img = $request->file('add-photo');
             $imgContents = file_get_contents($img->getPathname());
@@ -147,7 +165,23 @@ class ControlEmployee extends Controller
     {
         $employee = Employee::find($id);
         $employee->delete();
-
         return redirect("Record");
+    }
+
+    public function getCountries(){
+        $response = Http::withHeaders([
+            "Accept" => "application/json",
+             "api-token"=> 
+             "dLb9bIHQaFGMo2mYdSjHe-sCFdlqX8Ihh8k6GG0A8eKitC-QI-1t90d-o8p_3E1nZqg",
+             "user-email" => "jdcyonel2@gmail.com"
+        ])->withoutVerifying()->get('https://www.universal-tutorial.com/api/getaccesstoken');
+        $this->token = $response ->json('auth_token');        
+                
+        $country= Http::withHeaders([
+            "Authorization" => "Bearer " . $this->token,
+            "Accept" => "application/json"
+        ])->withoutVerifying()->get('https://www.universal-tutorial.com/api/countries/');
+
+        $this->countries = $country->json();
     }
 }

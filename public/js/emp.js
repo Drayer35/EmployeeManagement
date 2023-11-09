@@ -15,7 +15,7 @@ function verifyStateButton() {
 
 btnPhoto.addEventListener('click', (e) => {
     if (verifyStateButton()) {
-        file.click();
+        file.click;
     } else {
         img.src = defaultphoto;
         file.value =null

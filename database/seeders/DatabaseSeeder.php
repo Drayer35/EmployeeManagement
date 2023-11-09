@@ -29,8 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CivilStatusSeeder::class);
         $this->call(ProvincesSeeder::class);
         $this->call(DegreesInstructionSeeder::class);
-        $this->call(CountriesSeeder::class);
-        $this->call(EmployeesSeeder::class);
+        // $this->call(EmployeesSeeder::class);
 
         // Employee::factory(80)->create();
     }

@@ -19,9 +19,9 @@ class EmployeesSeeder extends Seeder
 
 
         try {
-            foreach (range(1, 30) as $index) {
+            foreach (range(1, 10) as $index) {
                 $employee = new Employee;
-                $employee->date_admision = $faker->date;
+                $employee->date_admission = $faker->date;
                 $employee->name = $faker->firstName;
                 $employee->last_name = $faker->lastName;
                 $employee->birthdate = $faker->date;
