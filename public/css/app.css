@@ -134,22 +134,35 @@ a{
 
 .header-content{
     background-color: white;    
-    margin:20px 0px;
-    height: 120px;
+    height: 115px;
     border-top: #e4e4e7  1px  solid;
     border-bottom:#e4e4e7 1px solid;
 }
 
 .content-section{
     overflow: auto;
-    padding:15px 10px;
     display: flex;
+    padding: 15px;
     height: 100%;
     width: 100%;
     justify-content: center;
 }
 
 
+@media (max-width: 1300px) {
+    .column-option {
+        display: none; /* Oculta la columna en pantallas pequeñas */
+    }
+
+    .parent-cont {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    }
+
+    /* Ajusta el ancho del contenido principal para ocupar todo el ancho disponible */
+    .column-content {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 768px) {
     .column-option {
         display: none; /* Oculta la columna en pantallas pequeñas */

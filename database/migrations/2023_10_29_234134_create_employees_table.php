@@ -17,7 +17,8 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('last_name');
+            $table->string('paternal_surname');
+            $table->string('maternal_surname');
             $table->string('country_birth')->nullable();
             $table->date('birthdate');
             $table->unsignedBigInteger('gender_id');
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('province_id');
+            $table->string ('district',100);
             $table->string('address',120)->default('Dirección por Definir');
             $table->string('own_home',120)->default('Propiedad por defidnir');
             $table->unsignedBigInteger('degree_instruction_id');

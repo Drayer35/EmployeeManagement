@@ -13,7 +13,6 @@ class Record extends Component
     {
         $employees = Employee::
         where('name','like','%'.$this->search.'%')
-        ->orwhere('last_name','like','%'.$this->search.'%')
         ->orwhere('dni','like','%'.$this->search.'%')
         ->orderBy($this->sort, $this->direction)
         ->get();

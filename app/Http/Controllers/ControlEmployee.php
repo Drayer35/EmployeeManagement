@@ -52,14 +52,16 @@ class ControlEmployee extends Controller
         $request->validate([
             'add-photo'=>'image|max:2068',
             'name'=>'required',
-            'lastName'=>'required',
-            'dni'=>'required|unique',
-            'phone'=>'required|unique',
+            'paternalSurname'=>'required',
+            'maternalSurname'=>'required',
+            'dni'=>'required',
+            'phone'=>'required',
             'birthdate'=>'required',
             'genderList'=>'required',
             'statusList'=>'required',
-            'email'=>'required|unique',
+            'email'=>'required',
             'degreeInstruction'=> 'required',
+            'district'=>'required',
             'address'=> 'required',
             'childrens'=> 'required',
             'ownHome'=> 'required',
@@ -73,7 +75,8 @@ class ControlEmployee extends Controller
         try{
             $employee = new Employee();
             $employee->name =$request->name;
-            $employee->last_name=$request->lastName;
+            $employee->paternal_surname =$request->paternalSurname;
+            $employee->maternal_surname =$request->maternalSurname;
             $employee->birthdate=$request->birthdate;
             $employee->country_birth = $request->countryBirth;
             $employee->gender_id=$request->genderList;
@@ -82,6 +85,7 @@ class ControlEmployee extends Controller
             $employee->email = $request->email;
             $employee->department_id=$request->departmentList;
             $employee->province_id=$request->provinceList;
+            $employee->district = $request->district;
             $employee->address = $request->address;
             $employee->own_home=$request->ownHome;
             $employee->status_id =$request->statusList;
@@ -95,8 +99,8 @@ class ControlEmployee extends Controller
                 $employee->photo = $imgContents;
             }
             $employee->save();
-            $employees = Employee::orderby('name')->paginate(10);
-            return view('employees.Records',compact('employees'));
+            // $employees = Employee::orderby('name')->paginate(10);
+        
            
         }
         catch(\Exception $e){
@@ -110,7 +114,7 @@ class ControlEmployee extends Controller
         $employee = Employee::find($id);
         $genders= Gender::all();
         $statuses= CivilStatus::all();
-        return view('employees.EditEmployee',compact('employee','genders','statuses'));
+        return view('livewire.edit-employee',compact('employee','genders','statuses'));
     }
 
  
@@ -119,45 +123,81 @@ class ControlEmployee extends Controller
         $request->validate([
             'add-photo'=>'image|max:2068',
             'name'=>'required',
-            'lastName'=>'required',
+            'paternalSurname'=>'required',
+            'maternalSurname'=>'required',
             'dni'=>'required',
             'phone'=>'required',
             'birthdate'=>'required',
             'genderList'=>'required',
             'statusList'=>'required',
             'email'=>'required',
+            'degreeInstruction'=> 'required',
+            'district'=>'required',
+            'address'=> 'required',
+            'childrens'=> 'required',
+            'ownHome'=> 'required',
+            'countryBirth'=> 'required',
             'departmentList'=>'required',
             'provinceList'=>'required',
             'profession'=>'required',
             'dateAdmission'=>'required'            
         ]);
-        
-        $employee =Employee::find($id);
-        $employee->name =$request->name;
-        $employee->last_name=$request->lastName;
-        $employee->birthdate=$request->birthdate;
-        $employee->country_birth = $request->countryBirth;
-        $employee->gender_id=$request->genderList;
-        $employee->dni=$request->dni;
-        $employee->phone=$request->phone;
-        $employee->email = $request->email;
-        $employee->department_id=$request->departmentList;
-        $employee->province_id=$request->provinceList;
-        $employee->address = $request->address;
-        $employee->own_home=$request->ownHome;
-        $employee->status_id =$request->statusList;
-        $employee->children= $request->childrens;
-        $employee->degree_instruction_id=$request->degreeInstruction;
-        $employee->profession=$request->profession;
-        $employee->date_admission= $request->dateAdmission;
-        if ($request->hasFile('add-photo')) {
-            $img = $request->file('add-photo');
-            $imgContents = file_get_contents($img->getPathname());
-            $employee->photo = $imgContents;
+        try{
+            $employee =Employee::find($id);
+            $employee->name =$request->name;
+            $employee->paternal_surname =$request->paternalSurname;
+            $employee->maternal_surname =$request->maternalSurname;
+            $employee->birthdate=$request->birthdate;
+            $employee->country_birth = $request->countryBirth;
+            $employee->gender_id=$request->genderList;
+            $employee->dni=$request->dni;
+            $employee->phone=$request->phone;
+            $employee->email = $request->email;
+            $employee->department_id=$request->departmentList;
+            $employee->province_id=$request->provinceList;
+            $employee->district = $request->district;
+            $employee->address = $request->address;
+            $employee->own_home=$request->ownHome;
+            $employee->status_id =$request->statusList;
+            $employee->children= $request->childrens;
+            $employee->degree_instruction_id=$request->degreeInstruction;
+            $employee->profession=$request->profession;
+            $employee->date_admission= $request->dateAdmission;
+            if ($request->hasFile('add-photo')) {
+                $img = $request->file('add-photo');
+                $imgContents = file_get_contents($img->getPathname());
+                $employee->photo = $imgContents;
+            }
+            $employee->save();
+
+            $this->reset([
+                'add-photo',
+                'name',
+                'paternalSurname',
+                'maternalSurname',
+                'dni',
+                'phone',
+                'birthdate',
+                'genderList',
+                'statusList',
+                'email',
+                'degreeInstruction',
+                'district',
+                'address',
+                'childrens',
+                'ownHome',
+                'countryBirth',
+                'departmentList',
+                'provinceList',
+                'profession',
+                'dateAdmission'            
+            ]);
+        }catch (\Exception $e) {
+            echo''. $e->getMessage();   
         }
-        $employee->save();
-        $employees = Employee::orderby('name')->paginate(10);
-        return view('employees.FormRecordEmployee',compact('employees'));
+       
+        // $employees = Employee::orderby('name')->paginate(10);
+        return redirect('Records');
     
     }
 
@@ -165,7 +205,7 @@ class ControlEmployee extends Controller
     {
         $employee = Employee::find($id);
         $employee->delete();
-        return redirect("Record");
+        return redirect('Records');
     }
 
     public function getCountries(){
