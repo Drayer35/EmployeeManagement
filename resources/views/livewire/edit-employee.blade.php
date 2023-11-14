@@ -7,7 +7,7 @@
         <x-slot name="title" style="color: black text-lg" >Datos Empleado</x-slot>
         <x-slot name="content">
             <div class="w-full flex h-auto bg-white">
-                <form class="w-full flex" id="form-employee" name="form-employee"
+                <form id="form-employee" name="form-employee"
                 action="{{ route('Employee.update', ['id' => $employee->id]) }}" 
                 method="POST" enctype="multipart/form-data">
                 @method("PUT")
@@ -72,7 +72,7 @@
                                 id="countryBirth" name="countryBirth">
                                 <option  value="" disabled {{ old('countryBirth') ? '' : 'selected' }}>{{__('Select Country')}}</option>
                                     @foreach ($countries as $country)
-                                    <option value="{{$country['country_name']}}" @if($country['country_name']== $employee->country_birth ){{'selected'}}@endif>{{$country['country_name']}}</option>
+                                    <option value="{{$country['id']}}" @if($country['id']== $employee->country_birth ){{'selected'}}@endif>{{$country['name']}}</option>
                                     @endforeach
                             </select>
                             @error('countryBirth')
@@ -265,12 +265,12 @@
       </x-slot>
 
       <x-slot name="footer">
-        <x-danger-button wire:click="$set('open',false)" class="mx-2 bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" >
+        <x-danger-button wire:click="$set('open',false)" class="mx-2 bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded hiddenb n   " >
             {{__('Cancel')}}
         </x-danger-button>
 
-        {{-- <label for="send-form" class="cursor-pointer mx-2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"  >{{__('Save Changes')}}</label>
-      --}}
+        <label for="send-form" class="cursor-pointer mx-2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"  >{{__('Save Changes')}}</label>
+      
       </x-slot>
     </x-dialog-modal>
     

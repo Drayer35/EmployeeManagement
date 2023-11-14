@@ -3,6 +3,7 @@
 use App\Http\Controllers\ControlEmployee;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ControlUser;
+use App\Http\Livewire\Employee\Create;
 use App\Http\Livewire\Employee\Record;
 use App\Http\Livewire\Employee\RecordEmployee;
 use Illuminate\Support\Facades\Route;
@@ -48,9 +49,12 @@ Route::controller(ControlEmployee::class)->group(function(){
     
 });
 
-Route::controller(Record::class)->group(function(){
-   
+Route::controller(Create::class)->group(function(){
+    Route::get('/asus','render')->name('render');
+    Route::post('/Save','save')->name('save');
+
 });
+
 
 Route::middleware([
     'auth:sanctum',

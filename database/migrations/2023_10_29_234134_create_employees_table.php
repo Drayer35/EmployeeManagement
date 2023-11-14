@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('paternal_surname');
             $table->string('maternal_surname');
-            $table->string('country_birth')->nullable();
+            $table->unsignedBigInteger('country_birth_id')->nullable();
             $table->date('birthdate');
             $table->unsignedBigInteger('gender_id');
             $table->string('dni',8);
@@ -39,6 +39,8 @@ return new class extends Migration
             $table->date('date_admission');
             $table->timestamps();
   
+
+            $table->foreign('country_birth_id')->references('id')->on('countries');
             $table->foreign('department_id')
                 ->references('id')
                 ->on('departments');

@@ -69,7 +69,7 @@
                             id="countryBirth" name="countryBirth">
                             <option  value="" disabled {{ old('countryBirth') ? '' : 'selected' }}>{{__('Select Country')}}</option>
                                 @foreach ($countries as $country)
-                                    <option value="{{$country['country_name']}}" {{ old('countryBirth') == $country['country_name'] ? 'selected' : '' }}>{{$country['country_name']}}</option>
+                                    <option value="{{$country['id']}}" {{ old('countryBirth') == $country['id'] ? 'selected' : '' }}>{{$country['name']}}</option>
                                 @endforeach
                         </select>
                         @error('countryBirth')

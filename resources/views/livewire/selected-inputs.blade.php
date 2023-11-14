@@ -5,7 +5,7 @@
             {{__('Department')}} 
         </label>
         <select class="rounded appearance-none block w-full bg-transparent text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none  "  
-                id="department-list" name="departmentList" wire:model='selectedDepa' required>
+                id="department-list" name="departmentList" wire:model='selectedDepa' >
             <option value="0" disabled selected>{{__('Select Department')}}</option>       
             @foreach ($departamentos as $dep ) 
                 <option value="{{$dep['id']}}">{{$dep['department']}}</option>
@@ -22,7 +22,7 @@
             {{__('Province')}} 
         </label>
         <select class="rounded appearance-none block w-full bg-transparent text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none  "  
-                id="province-list" name="provinceList" required>
+                id="province-list" name="provinceList" >
             <option value="" disabled selected>{{__('Select Province')}}</option> 
             @foreach ($provinces as  $prov)
             <option value="{{$prov->id}}">{{$prov->province}}</option>

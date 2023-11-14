@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CivilStatus;
+use App\Models\Countries;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Gender;
@@ -23,8 +24,6 @@ use function PHPUnit\Framework\isNull;
 class ControlEmployee extends Controller
 {
     use WithPagination;
-    public $token;
-    public $countries;
     public function admin(){
         return view('Admin');
     }
@@ -41,10 +40,9 @@ class ControlEmployee extends Controller
     public function register(){
         $genders= Gender::all();
         $statuses= CivilStatus::all();
+        $countries = Countries::all(); 
         $departments= Department::all();
         $degrees =DegreeInstruction::all(); 
-        $this->getCountries();
-        $countries = $this->countries;
         return view('employees.Register',compact('genders','statuses','degrees','countries'));
     }
 
@@ -78,7 +76,7 @@ class ControlEmployee extends Controller
             $employee->paternal_surname =$request->paternalSurname;
             $employee->maternal_surname =$request->maternalSurname;
             $employee->birthdate=$request->birthdate;
-            $employee->country_birth = $request->countryBirth;
+            $employee->country_birth_id = $request->countryBirth;
             $employee->gender_id=$request->genderList;
             $employee->dni=$request->dni;
             $employee->phone=$request->phone;
@@ -100,8 +98,28 @@ class ControlEmployee extends Controller
             }
             $employee->save();
             // $employees = Employee::orderby('name')->paginate(10);
-        
-           
+            $this->reset([
+                'add-photo',
+                'name',
+                'paternalSurname',
+                'maternalSurname',
+                'dni',
+                'phone',
+                'birthdate',
+                'genderList',
+                'statusList',
+                'email',
+                'degreeInstruction',
+                'district',
+                'address',
+                'childrens',
+                'ownHome',
+                'countryBirth',
+                'departmentList',
+                'provinceList',
+                'profession',
+                'dateAdmission'            
+            ]);
         }
         catch(\Exception $e){
             echo $e;
@@ -148,7 +166,7 @@ class ControlEmployee extends Controller
             $employee->paternal_surname =$request->paternalSurname;
             $employee->maternal_surname =$request->maternalSurname;
             $employee->birthdate=$request->birthdate;
-            $employee->country_birth = $request->countryBirth;
+            $employee->country_birth_id = $request->countryBirth;
             $employee->gender_id=$request->genderList;
             $employee->dni=$request->dni;
             $employee->phone=$request->phone;
@@ -208,20 +226,5 @@ class ControlEmployee extends Controller
         return redirect('Records');
     }
 
-    public function getCountries(){
-        $response = Http::withHeaders([
-            "Accept" => "application/json",
-             "api-token"=> 
-             "dLb9bIHQaFGMo2mYdSjHe-sCFdlqX8Ihh8k6GG0A8eKitC-QI-1t90d-o8p_3E1nZqg",
-             "user-email" => "jdcyonel2@gmail.com"
-        ])->withoutVerifying()->get('https://www.universal-tutorial.com/api/getaccesstoken');
-        $this->token = $response ->json('auth_token');        
-                
-        $country= Http::withHeaders([
-            "Authorization" => "Bearer " . $this->token,
-            "Accept" => "application/json"
-        ])->withoutVerifying()->get('https://www.universal-tutorial.com/api/countries/');
-
-        $this->countries = $country->json();
-    }
+  
 }
